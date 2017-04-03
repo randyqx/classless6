@@ -1,0 +1,144 @@
+<?xml version="1.0"?>
+<!DOCTYPE rfc SYSTEM "rfc2629.dtd">
+<?rfc comments="yes"?>
+<?rfc compact="yes"?>
+<?rfc inline="yes"?>
+<?rfc sortrefs="yes"?>
+<?rfc subcompact="yes"?>
+<?rfc symrefs="yes"?>
+<?rfc toc="yes"?>
+<?rfc tocdepth="3"?>
+<?rfc tocindent="yes"?>
+<?rfc tocompact="yes"?>
+
+<rfc category="std" docName="draft-bourbaki-6man-classless-ipv6-00" ipr="trust200902">
+
+<front>
+  <title>IPv6 is Classless</title> 
+
+  <author fullname="Nicolas Bourbaki" initials="N." surname="Bourbaki">
+    <organization>The Intertubes</organization>
+    <address>
+      <postal>
+        <street>42 Rue le Jour</street>
+        <city>Sophia-Antipolis</city>
+        <region></region>
+        <code>::1</code>
+        <country>FR</country>
+        </postal>
+      <email>bourbaki@bogus.com</email>
+      </address>
+    </author>
+
+  <date month="April" year="2017"/>
+
+  <abstract>
+
+    <t>Over the history of IPv6, there have been many classful address
+    models; TLA and NLA being outstanding examples.  They have all been
+    shown to be mistakes.  The last is a magic boundary at /64.  This
+    document removes that last bit of useless magic.</t>
+
+    </abstract>
+
+  </front>
+
+<middle>
+
+  <section anchor="intro" title="Introduction">
+
+    <t>Over the history of IPv6, there have been many classful address
+    models; TLA and NLA being outstanding examples.  They have all been
+    shown to be mistakes.  The last is a magic boundary at /64.  This
+    document removes that last bit of useless magic.</t>
+
+    </section>
+
+  <section anchor="reading" title="Suggested Reading">
+
+    <t>It is assumed that the reader understands IPv6, <xref
+    target="RFC2460"/>, IP Version 6 Addressing Architecture, see <xref
+    target="RFC4291"/>, and the proposed changes to <xref
+    target="RFC4291"/>, see <xref
+    target="I-D.hinden-6man-rfc2464bis"/>.</t>
+
+    </section>
+
+  <section anchor="background" title="Background">
+
+    <t>To quote Lorenzo Colitti in the working group meeting at IETF 98,
+    "Just because this is being elevated to full standard does not mean
+    it can not be changed tomorrow."  Tomorrow is here.</t>
+
+    <t>Link prefixes of varied lengths, /127, /126, /124, /120, ... /64
+    have been successfully deployed for many years.  Having the formal
+    specification say otherwise risks potential mis-implementation by
+    the naive, resulting in operational disasters.</t>
+
+    </section>
+
+  <section anchor="simple" title="A simple Statement">
+
+    <t>To state it simply, IPv6 unicast routing is based on prefixes of
+    any valid length up to 128 except for links where an Internet
+    Standard such as Stateless Address Configuration <xref
+    target="RFC4862"/>, or Using 127-Bit IPv6 Prefixes on Inter-Router
+    Links <xref target="RFC6164"/> is in use.</t>
+
+    </section>
+
+  <section anchor="notes" title="Notes and Recommendations">
+
+    <t>For historical reasons, when a prefix is needed on a link,
+    barring other considerations, a /64 is traditional.</t>
+
+    </section>
+
+  <section anchor="security" title="Security Considerations">
+
+    <t>This document has no known security impact.</t>
+
+    </section>
+
+  <section anchor="iana" title="IANA Considerations">
+
+    <t>This document has no IANA Considerations.</t>
+
+    <!--
+    <t>Note to RFC Editor: this section may be replaced on publication
+      as an RFC.</t>
+      -->
+
+    </section>
+
+  <section anchor="authors" title="Authors">
+
+    <t>The original draft was by Randy Bush, who was immediately aided
+    and abetted by Job Snijders, [ your name here ].</t>
+
+    </section>
+
+  <section anchor="acknowledgments" title="Acknowledgments">
+
+    <t>The authors wish to thank .</t>
+
+    </section>
+
+  </middle>
+
+<back>
+
+  <references title="Normative References">
+    <?rfc include="reference.RFC.2460"?>
+    <?rfc include="reference.RFC.4291"?>
+    </references>
+
+  <references title="Informative References">
+    <?rfc include="reference.RFC.4862"?>
+    <?rfc include="reference.RFC.6164"?>
+    <?rfc include="reference.I-D.hinden-6man-rfc2464bis"?>
+    </references>
+
+  </back>
+
+</rfc>
