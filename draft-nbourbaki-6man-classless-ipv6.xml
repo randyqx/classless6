@@ -66,14 +66,22 @@
 
   <section anchor="background" title="Background">
 
+<!--
     <t>To quote Lorenzo Colitti in the working group meeting at IETF 98,
     "Just because this is being elevated to full standard does not mean
     it can not be changed tomorrow."  Tomorrow is here.</t>
+-->
 
-    <t>Link prefixes of varied lengths, /127, /126, /124, /120, ... /64
-    have been successfully deployed for many years.  Having the formal
-    specification say otherwise risks potential mis-implementation by
-    the naive, resulting in operational disasters.</t>
+    <t>Some confusion has been caused by the IP Version 6 Addressing
+    Architecture, <xref target="RFC4291"/>, and the proposed changes in
+    <xref target="I-D.hinden-6man-rfc2464bis"/> with respect to allowed
+    maximum prefix lengths and the minimum host part on a link.</t>
+    
+    <t>In the meantime, link prefixes of varied lengths, /127, /126,
+    /124, /120, ... /64 have been successfully deployed for many years.
+    Having the formal specification be unclear risks potential
+    mis-implementation by the naive, which coulf result in operational
+    disasters.</t>
 
     </section>
 
@@ -91,6 +99,13 @@
 
     <t>For historical reasons, when a prefix is needed on a link,
     barring other considerations, a /64 is traditional.</t>
+
+    <t>The length of the prefix identifier in Stateless Address
+    Configuration, <xref target="RFC4862"/> is a parameter; its length
+    needs to be sufficient for effective randomization for privacy
+    reasons.  For example, a /48 would be sufficient.  But we recommend,
+    barring strong considerations to the contrary, using 64-bits in
+    order not to discover where 64-bits was hard-coded.</t>
 
     </section>
 
