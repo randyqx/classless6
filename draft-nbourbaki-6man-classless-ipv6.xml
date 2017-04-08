@@ -103,9 +103,10 @@
     <t>The length of the prefix identifier in Stateless Address
     Configuration, <xref target="RFC4862"/> is a parameter; its length
     needs to be sufficient for effective randomization for privacy
-    reasons.  For example, a /48 would be sufficient.  But we recommend,
-    barring strong considerations to the contrary, using 64-bits for
-    SLAAC in order not to discover where 64-bits was hard-coded.</t>
+    reasons.  For example, a /48 would be sufficient.  But operationally
+    we recommend, barring strong considerations to the contrary, using
+    64-bits for SLAAC in order not to discover where 64-bits was
+    hard-coded.</t>
 
     </section>
 
