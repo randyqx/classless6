@@ -20,7 +20,7 @@
     <organization>The Intertubes</organization>
     <address>
       <postal>
-        <street>42 Rue le Jour</street>
+        <street>42 Rue du Jour</street>
         <city>Sophia-Antipolis</city>
         <region></region>
         <code>::1</code>
@@ -36,8 +36,8 @@
 
     <t>Over the history of IPv6, there have been many classful address
     models; TLA and NLA being outstanding examples.  They have all been
-    shown to be mistakes.  The last is a magic boundary at /64.  This
-    document removes that last bit of useless magic.</t>
+    shown to be mistakes.  The last remaining is a magic boundary at
+    /64.  This document removes that last bit of useless magic.</t>
 
     </abstract>
 
@@ -49,8 +49,8 @@
 
     <t>Over the history of IPv6, there have been many classful address
     models; TLA and NLA being outstanding examples.  They have all been
-    shown to be mistakes.  The last is a magic boundary at /64.  This
-    document removes that last bit of useless magic.</t>
+    shown to be mistakes.  The last remaining is a magic boundary at
+    /64.  This document removes that last bit of useless magic.</t>
 
     </section>
 
@@ -80,7 +80,7 @@
     <t>In the meantime, link prefixes of varied lengths, /127, /126,
     /124, /120, ... /64 have been successfully deployed for many years.
     Having the formal specification be unclear risks potential
-    mis-implementation by the naive, which coulf result in operational
+    mis-implementation by the naive, which could result in operational
     disasters.</t>
 
     </section>
@@ -104,8 +104,8 @@
     Configuration, <xref target="RFC4862"/> is a parameter; its length
     needs to be sufficient for effective randomization for privacy
     reasons.  For example, a /48 would be sufficient.  But we recommend,
-    barring strong considerations to the contrary, using 64-bits in
-    order not to discover where 64-bits was hard-coded.</t>
+    barring strong considerations to the contrary, using 64-bits for
+    SLAAC in order not to discover where 64-bits was hard-coded.</t>
 
     </section>
 
