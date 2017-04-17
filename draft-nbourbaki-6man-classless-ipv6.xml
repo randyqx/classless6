@@ -34,10 +34,11 @@
 
   <abstract>
 
-    <t>Over the history of IPv6, there have been many classful address
-    models; TLA and NLA being outstanding examples.  They have all been
-    shown to be mistakes.  The last remaining is a magic boundary at
-    /64.  This document removes that last bit of useless magic.</t>
+    <t>Over the history of IPv6, various classful address models have
+    been proposed, particularly Top-Level Aggregation (TLA) and
+    Next-Level Aggregation(NLA) Identifiers.  They have all proved to be
+    mistakes.  The last remnant is a rigid boundary at /64.  This
+    document removes that rigidity as far as routing is concerned.</t>
 
     </abstract>
 
@@ -47,20 +48,40 @@
 
   <section anchor="intro" title="Introduction">
 
-    <t>Over the history of IPv6, there have been many classful address
-    models; TLA and NLA being outstanding examples.  They have all been
-    shown to be mistakes.  The last remaining is a magic boundary at
-    /64.  This document removes that last bit of useless magic.</t>
+    <t>Over the history of IPv6, various classful address models have
+    been proposed, particularly Top-Level Aggregation (TLA) and
+    Next-Level Aggregation(NLA) Identifiers.  They have all proved to be
+    mistakes. For example, TLA and NLA were obsoleted by <xref
+    target="RFC3587"/>.  The last remnant is a rigid boundary at
+    /64. This document removes that rigidity as far as routing is
+    concerned.</t>
 
     </section>
 
   <section anchor="reading" title="Suggested Reading">
+  
+    <t>It is assumed that the reader understands the history of classful
+    addressing in IPv4 and why it was abolished <xref
+    target="RFC4632"/>. Of course, the acute need to conserve address
+    space that forced the adoption of classless addressing for IPv4 does
+    not apply to IPv6; but the arguments for operational flexibility in
+    address allocation remain compelling.</t>
 
-    <t>It is assumed that the reader understands IPv6, <xref
+    <t>It is also assumed that the reader understands IPv6, <xref
     target="RFC2460"/>, IP Version 6 Addressing Architecture, see <xref
     target="RFC4291"/>, and the proposed changes to <xref
     target="RFC4291"/>, see <xref
     target="I-D.hinden-6man-rfc2464bis"/>.</t>
+    
+    <t>NOTE: do we mean 4291bis (currently moribund) or 2464bis?</t>
+    
+    <t>An important recent development in IPv6 is that for host
+    computers on local area networks, the way in which interface
+    identifiers are formed is no longer bound to layer 2 addresses (MAC
+    addresses) <xref target="RFC7217"/>.  We can therefore appreciate
+    that their length, previously fixed at 64 bits <xref
+    target="RFC7136"/>, is in fact a free parameter as stated in <xref
+    target="RFC4862"/>.</t>
 
     </section>
 
@@ -75,10 +96,11 @@
     <t>Some confusion has been caused by the IP Version 6 Addressing
     Architecture, <xref target="RFC4291"/>, and the proposed changes in
     <xref target="I-D.hinden-6man-rfc2464bis"/> with respect to allowed
-    maximum prefix lengths and the minimum host part on a link.</t>
+    maximum prefix lengths and the minimum host part (sometimes known as
+    interface identifier) on a link.</t>
     
-    <t>In the meantime, link prefixes of varied lengths, /127, /126,
-    /124, /120, ... /64 have been successfully deployed for many years.
+    <t>Meanwhile, link prefixes of varied lengths, /127, /126, /124,
+    /120, ... /64 have been successfully deployed for many years.
     Having the formal specification be unclear risks potential
     mis-implementation by the naive, which could result in operational
     disasters.</t>
@@ -89,30 +111,44 @@
 
     <t>To state it simply, IPv6 unicast routing is based on prefixes of
     any valid length up to 128 except for links where an Internet
-    Standard such as Stateless Address Configuration <xref
-    target="RFC4862"/>, or Using 127-Bit IPv6 Prefixes on Inter-Router
-    Links <xref target="RFC6164"/> is in use.</t>
-
-    </section>
+    Standard such as, for example, Stateless Address AutoConfiguration
+    <xref target="RFC4862"/>, or Using 127-Bit IPv6 Prefixes on
+    Inter-Router Links <xref target="RFC6164"/> is in use.</t>
+    
+        </section>
 
   <section anchor="notes" title="Notes and Recommendations">
 
     <t>For historical reasons, when a prefix is needed on a link,
-    barring other considerations, a /64 is traditional.</t>
+    barring other considerations, a /64 is traditional <xref
+    target="RFC7136"/>.</t>
 
     <t>The length of the prefix identifier in Stateless Address
-    Configuration, <xref target="RFC4862"/> is a parameter; its length
-    needs to be sufficient for effective randomization for privacy
-    reasons.  For example, a /48 would be sufficient.  But operationally
-    we recommend, barring strong considerations to the contrary, using
-    64-bits for SLAAC in order not to discover where 64-bits was
-    hard-coded.</t>
+    AutoConfiguration, <xref target="RFC4862"/> is a parameter; its
+    length needs to be sufficient for effective randomization for
+    privacy reasons.  For example, a /48 might be sufficient.  But
+    operationally we recommend, barring strong considerations to the
+    contrary, using 64-bits for SLAAC in order not to discover bugs
+    where 64-bits was hard-coded, and to favor portability of devices
+    and operating systems.</t>
+    
+    <t>None the less, there is no reason in theory why an IPv6 node
+    should not operate with different interface identfier lengths on
+    different physical interfaces.  Thus a correct implementation of
+    SLAAC must in fact allow for any length of prefix, with the value
+    being parameterised per interface.</t>
+    
+    <t>NOTE: should we comment on the fact that at least Linux and
+    Windows seem to assume that the default prefix is /64 in the
+    management CLI?</t>
 
     </section>
 
   <section anchor="security" title="Security Considerations">
 
-    <t>This document has no known security impact.</t>
+    <t>This document has no known security impact, assuming that
+    user devices use an unpredictable interface identifier 
+    <xref target="RFC7721"/> for privacy.</t>
 
     </section>
 
@@ -130,7 +166,7 @@
   <section anchor="authors" title="Authors">
 
     <t>The original draft was by Randy Bush, who was immediately aided
-    and abetted by Job Snijders, [ your name here ].</t>
+    and abetted by Brian Carpenter, Job Snijders, [ your name here ].</t>
 
     </section>
 
@@ -152,6 +188,11 @@
   <references title="Informative References">
     <?rfc include="reference.RFC.4862"?>
     <?rfc include="reference.RFC.6164"?>
+    <?rfc include="reference.RFC.3587"?>
+    <?rfc include="reference.RFC.4632"?>
+    <?rfc include="reference.RFC.7136"?>
+    <?rfc include="reference.RFC.7217"?>
+    <?rfc include="reference.RFC.7721"?>
     <?rfc include="reference.I-D.hinden-6man-rfc2464bis"?>
     </references>
 
