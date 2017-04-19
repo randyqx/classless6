@@ -4,8 +4,8 @@
 
 Network Working Group                                        N. Bourbaki
 Internet-Draft                                            The Intertubes
-Intended status: Standards Track                          April 17, 2017
-Expires: October 19, 2017
+Intended status: Standards Track                          April 19, 2017
+Expires: October 21, 2017
 
 
                            IPv6 is Classless
@@ -34,7 +34,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on October 19, 2017.
+   This Internet-Draft will expire on October 21, 2017.
 
 Copyright Notice
 
@@ -53,7 +53,7 @@ Copyright Notice
 
 
 
-Bourbaki                Expires October 19, 2017                [Page 1]
+Bourbaki                Expires October 21, 2017                [Page 1]
 
 Internet-Draft              IPv6 is Classless                 April 2017
 
@@ -109,7 +109,7 @@ Table of Contents
 
 
 
-Bourbaki                Expires October 19, 2017                [Page 2]
+Bourbaki                Expires October 21, 2017                [Page 2]
 
 Internet-Draft              IPv6 is Classless                 April 2017
 
@@ -165,7 +165,7 @@ Internet-Draft              IPv6 is Classless                 April 2017
 
 
 
-Bourbaki                Expires October 19, 2017                [Page 3]
+Bourbaki                Expires October 21, 2017                [Page 3]
 
 Internet-Draft              IPv6 is Classless                 April 2017
 
@@ -177,7 +177,8 @@ Internet-Draft              IPv6 is Classless                 April 2017
 8.  Authors
 
    The original draft was by Randy Bush, who was immediately aided and
-   abetted by Brian Carpenter, Job Snijders, [ your name here ].
+   abetted by Brian Carpenter, Chris Morrow, Job Snijders, [ your name
+   here ].
 
 9.  Acknowledgments
 
@@ -220,8 +221,7 @@ Internet-Draft              IPv6 is Classless                 April 2017
 
 
 
-
-Bourbaki                Expires October 19, 2017                [Page 4]
+Bourbaki                Expires October 21, 2017                [Page 4]
 
 Internet-Draft              IPv6 is Classless                 April 2017
 
@@ -277,4 +277,4 @@ Author's Address
 
 
 
-Bourbaki                Expires October 19, 2017                [Page 5]
+Bourbaki                Expires October 21, 2017                [Page 5]
