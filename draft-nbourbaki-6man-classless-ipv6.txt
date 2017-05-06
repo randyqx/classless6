@@ -72,7 +72,7 @@ Table of Contents
    10. References  . . . . . . . . . . . . . . . . . . . . . . . . .   4
      10.1.  Normative References . . . . . . . . . . . . . . . . . .   4
      10.2.  Informative References . . . . . . . . . . . . . . . . .   5
-   Author's Address  . . . . . . . . . . . . . . . . . . . . . . . .   6
+   Author's Address  . . . . . . . . . . . . . . . . . . . . . . . .   5
 
 1.  Introduction
 
@@ -135,8 +135,8 @@ Internet-Draft              IPv6 is Classless                 April 2017
 
 5.  Recommendations
 
-   For backwards compatibility, when a prefix is needed on a link,
-   barring other considerations, a /64 is RECOMENDED [RFC7136].
+   For historical reasons, when a prefix is needed on a link, barring
+   other considerations, a /64 is RECOMMENDED [RFC7136].
 
    The length of the Interface Identifier in Stateless Address
    AutoConfiguration [RFC4862] is a parameter; its length needs to be
@@ -194,8 +194,8 @@ Internet-Draft              IPv6 is Classless                 April 2017
 8.  Authors
 
    The original draft was by Randy Bush, who was immediately aided and
-   abetted by Brian Carpenter, Chris Morrow, Job Snijders, [ your name
-   here ].
+   abetted by Brian Carpenter, Chris Morrow, Fernando Gont, Job
+   Snijders, [ your name here ].
 
 9.  Acknowledgments
 
@@ -206,18 +206,18 @@ Internet-Draft              IPv6 is Classless                 April 2017
 10.1.  Normative References
 
    [RFC2460]  Deering, S. and R. Hinden, "Internet Protocol, Version 6
-              (IPv6) Specification", RFC 2460, DOI 10.17487/RFC2460,
-              December 1998, <http://www.rfc-editor.org/info/rfc2460>.
+              (IPv6) Specification", RFC 2460, December 1998.
 
    [RFC4291]  Hinden, R. and S. Deering, "IP Version 6 Addressing
-              Architecture", RFC 4291, DOI 10.17487/RFC4291, February
-              2006, <http://www.rfc-editor.org/info/rfc4291>.
+              Architecture", RFC 4291, February 2006.
 
    [RFC7217]  Gont, F., "A Method for Generating Semantically Opaque
               Interface Identifiers with IPv6 Stateless Address
               Autoconfiguration (SLAAC)", RFC 7217,
               DOI 10.17487/RFC7217, April 2014,
               <http://www.rfc-editor.org/info/rfc7217>.
+
+
 
 
 
@@ -239,23 +239,18 @@ Internet-Draft              IPv6 is Classless                 April 2017
               progress), October 2015.
 
    [RFC3587]  Hinden, R., Deering, S., and E. Nordmark, "IPv6 Global
-              Unicast Address Format", RFC 3587, DOI 10.17487/RFC3587,
-              August 2003, <http://www.rfc-editor.org/info/rfc3587>.
+              Unicast Address Format", RFC 3587, August 2003.
 
    [RFC4632]  Fuller, V. and T. Li, "Classless Inter-domain Routing
               (CIDR): The Internet Address Assignment and Aggregation
-              Plan", BCP 122, RFC 4632, DOI 10.17487/RFC4632, August
-              2006, <http://www.rfc-editor.org/info/rfc4632>.
+              Plan", BCP 122, RFC 4632, August 2006.
 
    [RFC4862]  Thomson, S., Narten, T., and T. Jinmei, "IPv6 Stateless
-              Address Autoconfiguration", RFC 4862,
-              DOI 10.17487/RFC4862, September 2007,
-              <http://www.rfc-editor.org/info/rfc4862>.
+              Address Autoconfiguration", RFC 4862, September 2007.
 
    [RFC6164]  Kohno, M., Nitzan, B., Bush, R., Matsuzaki, Y., Colitti,
               L., and T. Narten, "Using 127-Bit IPv6 Prefixes on Inter-
-              Router Links", RFC 6164, DOI 10.17487/RFC6164, April 2011,
-              <http://www.rfc-editor.org/info/rfc6164>.
+              Router Links", RFC 6164, April 2011.
 
    [RFC7136]  Carpenter, B. and S. Jiang, "Significance of IPv6
               Interface Identifiers", RFC 7136, DOI 10.17487/RFC7136,
@@ -270,18 +265,6 @@ Internet-Draft              IPv6 is Classless                 April 2017
               RFC 7721, DOI 10.17487/RFC7721, March 2016,
               <http://www.rfc-editor.org/info/rfc7721>.
 
-
-
-
-
-
-
-
-Bourbaki                 Expires October 3, 2017                [Page 5]
-
-Internet-Draft              IPv6 is Classless                 April 2017
-
-
 Author's Address
 
    Nicolas Bourbaki
@@ -294,43 +277,4 @@ Author's Address
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Bourbaki                 Expires October 3, 2017                [Page 6]
+Bourbaki                 Expires October 3, 2017                [Page 5]
