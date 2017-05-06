@@ -67,11 +67,10 @@
     not apply to IPv6; but the arguments for operational flexibility in
     address allocation remain compelling.</t>
 
-    <t>It is also assumed that the reader understands IPv6, <xref
-    target="RFC2460"/>, IP Version 6 Addressing Architecture, see <xref
-    target="RFC4291"/>, and the proposed changes to <xref
-    target="RFC4291"/>, see <xref
-    target="I-D.hinden-6man-rfc4291bis"/>.</t>
+    <t>It is also assumed that the reader understands IPv6 <xref
+    target="RFC2460"/>, the IP Version 6 Addressing Architecture <xref
+    target="RFC4291"/>, the proposed changes to RFC4291 <xref
+    target="I-D.hinden-6man-rfc4291bis"/>, and the recent recommendations for the generation of stable Interface Identifiers <xref target="RFC8064"/>.</t>
 
 <!--     
     <t>NOTE: do we mean 4291bis (currently moribund) or 2464bis?</t>
@@ -104,7 +103,7 @@ don't een need /64 for SLAAC, except for backward compatibility. (*)
 
     <t>Some confusion has been caused by the IP Version 6 Addressing
     Architecture, <xref target="RFC4291"/>, and the proposed changes in
-    <xref target="I-D.hinden-6man-rfc4291bis"/> with respect to the minimum subnet size</t>
+    <xref target="I-D.hinden-6man-rfc4291bis"/> with respect to the minimum subnet size.</t>
     
     <t>Meanwhile, link prefixes of varied lengths, /127, /126, /124,
     /120, ... /64 have been successfully deployed for many years.
