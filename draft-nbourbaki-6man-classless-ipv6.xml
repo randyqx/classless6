@@ -71,14 +71,23 @@
     target="RFC2460"/>, IP Version 6 Addressing Architecture, see <xref
     target="RFC4291"/>, and the proposed changes to <xref
     target="RFC4291"/>, see <xref
-    target="I-D.hinden-6man-rfc2464bis"/>.</t>
-    
+    target="I-D.hinden-6man-rfc4291bis"/>.</t>
+
+<!--     
     <t>NOTE: do we mean 4291bis (currently moribund) or 2464bis?</t>
+
+[fgont] We do mean 4291bis. That say, RFC8064/RFC7217 already do part of the job: 
+they replace the algorithm of "embedding the MAC address in the IPv6" with one
+that embeds random bits of an appropriate length. That is, strictly speaking, we
+don't een need /64 for SLAAC, except for backward compatibility. (*)
+
+(*) as long as the local subnet is large enough and the IID collision rate is low enough.
+-->
     
     <t>An important recent development in IPv6 is that for host
     computers on local area networks, the way in which interface
     identifiers are formed is no longer bound to layer 2 addresses (MAC
-    addresses) <xref target="RFC7217"/>.  We can therefore appreciate
+    addresses) <xref target="RFC7217"/> <xref target="RFC8064"/>.  We can therefore appreciate
     that their length, previously fixed at 64 bits <xref
     target="RFC7136"/>, is in fact a free parameter as stated in <xref
     target="RFC4862"/>.</t>
