@@ -70,26 +70,30 @@
     <t>It is also assumed that the reader understands IPv6 <xref
     target="RFC2460"/>, the IP Version 6 Addressing Architecture <xref
     target="RFC4291"/>, the proposed changes to RFC4291 <xref
-    target="I-D.hinden-6man-rfc4291bis"/>, and the recent recommendations for the generation of stable Interface Identifiers <xref target="RFC8064"/>.</t>
+    target="I-D.hinden-6man-rfc4291bis"/>, and the recent
+    recommendations for the generation of stable Interface Identifiers
+    <xref target="RFC8064"/>.</t>
 
 <!--     
     <t>NOTE: do we mean 4291bis (currently moribund) or 2464bis?</t>
 
-[fgont] We do mean 4291bis. That say, RFC8064/RFC7217 already do part of the job: 
-they replace the algorithm of "embedding the MAC address in the IPv6" with one
-that embeds random bits of an appropriate length. That is, strictly speaking, we
-don't een need /64 for SLAAC, except for backward compatibility. (*)
+[fgont] We do mean 4291bis. That say, RFC8064/RFC7217 already do part of
+the job: they replace the algorithm of "embedding the MAC address in the
+IPv6" with one that embeds random bits of an appropriate length. That
+is, strictly speaking, we don't een need /64 for SLAAC, except for
+backward compatibility. (*)
 
-(*) as long as the local subnet is large enough and the IID collision rate is low enough.
+(*) as long as the local subnet is large enough and the IID collision
+rate is low enough. 
 -->
     
     <t>An important recent development in IPv6 is that for host
     computers on local area networks, the way in which interface
     identifiers are formed is no longer bound to layer 2 addresses (MAC
-    addresses) <xref target="RFC7217"/> <xref target="RFC8064"/>.  We can therefore appreciate
-    that their length, previously fixed at 64 bits <xref
-    target="RFC7136"/>, is in fact a free parameter as stated in <xref
-    target="RFC4862"/>.</t>
+    addresses) <xref target="RFC7217"/> <xref target="RFC8064"/>.  We
+    can therefore appreciate that their length, previously fixed at 64
+    bits <xref target="RFC7136"/>, is in fact a free parameter as stated
+    in <xref target="RFC4862"/>.</t>
 
     </section>
 
@@ -103,7 +107,8 @@ don't een need /64 for SLAAC, except for backward compatibility. (*)
 
     <t>Some confusion has been caused by the IP Version 6 Addressing
     Architecture, <xref target="RFC4291"/>, and the proposed changes in
-    <xref target="I-D.hinden-6man-rfc4291bis"/> with respect to the minimum subnet size.</t>
+    <xref target="I-D.hinden-6man-rfc4291bis"/> with respect to the
+    minimum subnet size.</t>
     
     <t>Meanwhile, link prefixes of varied lengths, /127, /126, /124,
     /120, ... /64 have been successfully deployed for many years.
@@ -123,14 +128,18 @@ don't een need /64 for SLAAC, except for backward compatibility. (*)
 
 <!-- [fgont] I think these section is mixing up to things:
 
-* Routing: Nodes must *always* support rotuing on any valid length, even if, say, SLAAC is in use.
-           Even when SLAAC is used, I might want to install a host-specific rule (a /128 rule),
-           if I please. And I think this point has never been contended (except for vendors that
-           go lazy/cheap and just don't want to use mre than 64-bits in each FIB entry.
+* Routing: Nodes must *always* support rotuing on any valid length, even
+           if, say, SLAAC is in use.  Even when SLAAC is used, I might
+           want to install a host-specific rule (a /128 rule), if I
+           please. And I think this point has never been contended
+           (except for vendors that go lazy/cheap and just don't want to
+           use mre than 64-bits in each FIB entry.
 
-* Subnet size: This is what you're really referring to here. Nodes should be able to employ any 
-               subnet size that they please, except when slaac is in use (for backwards compatibility)
-               or e.g. when /127 (or the like) prefixes are employed for point to point links.
+* Subnet size: This is what you're really referring to here. Nodes
+               should be able to employ any subnet size that they
+               please, except when slaac is in use (for backwards
+               compatibility) or e.g. when /127 (or the like) prefixes
+               are employed for point to point links.
 -->
         </section>
 
@@ -153,9 +162,11 @@ don't een need /64 for SLAAC, except for backward compatibility. (*)
     should not operate with different interface identfier lengths on
     different physical interfaces.  Thus a correct implementation of
     SLAAC must in fact allow for any length of prefix, with the value
-    being parameterised per interface. For instance, the Interface Identifier length in the recommended 
-    (see <xref target="RFC8064"/>) algorithm for selecting stable 
-    interface identifiers <xref target="RFC7217"/> is a parameter, rather than a hardcoded value.</t>
+    being parameterised per interface. For instance, the Interface
+    Identifier length in the recommended (see <xref target="RFC8064"/>)
+    algorithm for selecting stable interface identifiers <xref
+    target="RFC7217"/> is a parameter, rather than a hardcoded
+    value.</t>
     
     <t>NOTE: should we comment on the fact that at least Linux and
     Windows seem to assume that the default prefix is /64 in the
@@ -165,16 +176,23 @@ don't een need /64 for SLAAC, except for backward compatibility. (*)
 
   <section anchor="security" title="Security Considerations">
 
-<t>Assumming that nodes employ unpredictable interface identifiers <xref target="RFC7721"/>, the subnet size may have an 
-impact on some security and privacy properties of a network. Namely, the smaller the subnet size, the more feasible it 
-becomes to perform IPv6 address scans <xref target="RFC7707"/> <xref target="RFC7721"/>.
-However, that for some specific subnets (such as point to point links), this may be less of an issue.</t>
+    <t>Assumming that nodes employ unpredictable interface identifiers
+    <xref target="RFC7721"/>, the subnet size may have an impact on some
+    security and privacy properties of a network. Namely, the smaller
+    the subnet size, the more feasible it becomes to perform IPv6
+    address scans <xref target="RFC7707"/> <xref target="RFC7721"/>.
+    However, that for some specific subnets (such as point to point
+    links), this may be less of an issue.</t>
 
-<t>On the other hand, we assume that a number of IPv6 implementations fail to enforce limits on the size of some of the data 
-structures they employ for communicating with neighboring nodes, such as the Neighbor Cache. In such cases, the use of smaller
-subnets essentially enforces an operational limit on such data structures, thus helping mitigate some pathological behaviors 
-(such as Neighbor Cache Exhaustion attacks).</t>
-<!-- [fgont] Still need to add references here... e.g. to Joel's RFC -->
+    <t>On the other hand, we assume that a number of IPv6
+    implementations fail to enforce limits on the size of some of the
+    data structures they employ for communicating with neighboring
+    nodes, such as the Neighbor Cache. In such cases, the use of smaller
+    subnets essentially enforces an operational limit on such data
+    structures, thus helping mitigate some pathological behaviors (such
+    as Neighbor Cache Exhaustion attacks).</t>
+
+    <!-- [fgont] Still need to add references here... e.g. to Joel's RFC -->
     </section>
 
   <section anchor="iana" title="IANA Considerations">
@@ -191,8 +209,8 @@ subnets essentially enforces an operational limit on such data structures, thus 
   <section anchor="authors" title="Authors">
 
     <t>The original draft was by Randy Bush, who was immediately aided
-    and abetted by Brian Carpenter, Chris Morrow, Job Snijders, [ your
-    name here ].</t>
+    and abetted by Brian Carpenter, Chris Morrow, Fernando Gont, Job
+    Snijders, [ your name here ].</t>
 
     </section>
 
