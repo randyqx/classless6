@@ -104,7 +104,7 @@ don't een need /64 for SLAAC, except for backward compatibility. (*)
 
     <t>Some confusion has been caused by the IP Version 6 Addressing
     Architecture, <xref target="RFC4291"/>, and the proposed changes in
-    <xref target="I-D.hinden-6man-rfc2464bis"/> with respect to allowed
+    <xref target="I-D.hinden-6man-rfc4291bis"/> with respect to allowed
     maximum prefix lengths and the minimum host part (sometimes known as
     interface identifier) on a link.</t>
     
