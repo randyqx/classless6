@@ -136,8 +136,8 @@ don't een need /64 for SLAAC, except for backward compatibility. (*)
 
   <section anchor="notes" title="Recommendations">
 
-    <t>For backwards compatibility, when a prefix is needed on a link,
-    barring other considerations, a /64 is RECOMENDED <xref
+    <t>For historical reasons, when a prefix is needed on a link,
+    barring other considerations, a /64 is RECOMMENDED <xref
     target="RFC7136"/>.</t>
 
     <t>The length of the Interface Identifier in Stateless Address
