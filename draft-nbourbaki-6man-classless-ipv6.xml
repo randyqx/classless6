@@ -221,7 +221,7 @@ subnets essentially enforces an operational limit on such data structures, thus 
     <?rfc include="reference.RFC.7707"?>
     <?rfc include="reference.RFC.7136"?>
     <?rfc include="reference.RFC.7721"?>
-    <?rfc include="reference.I-D.hinden-6man-rfc2464bis"?>
+    <?rfc include="reference.I-D.hinden-6man-rfc4291bis"?>
     </references>
 
   </back>
