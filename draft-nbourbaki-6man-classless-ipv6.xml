@@ -121,6 +121,17 @@ don't een need /64 for SLAAC, except for backward compatibility. (*)
     <xref target="RFC4862"/>, or Using 127-Bit IPv6 Prefixes on
     Inter-Router Links <xref target="RFC6164"/> is in use.</t>
 
+<!-- [fgont] I think these section is mixing up to things:
+
+* Routing: Nodes must *always* support rotuing on any valid length, even if, say, SLAAC is in use.
+           Even when SLAAC is used, I might want to install a host-specific rule (a /128 rule),
+           if I please. And I think this point has never been contended (except for vendors that
+           go lazy/cheap and just don't want to use mre than 64-bits in each FIB entry.
+
+* Subnet size: This is what you're really referring to here. Nodes should be able to employ any 
+               subnet size that they please, except when slaac is in use (for backwards compatibility)
+               or e.g. when /127 (or the like) prefixes are employed for point to point links.
+-->
         </section>
 
   <section anchor="notes" title="Notes and Recommendations">
