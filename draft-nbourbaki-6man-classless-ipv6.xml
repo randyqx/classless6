@@ -36,7 +36,7 @@
 
     <t>Over the history of IPv6, various classful address models have
     been proposed, particularly Top-Level Aggregation (TLA) and
-    Next-Level Aggregation(NLA) Identifiers.  They have all proved to be
+    Next-Level Aggregation (NLA) Identifiers.  They have all proved to be
     mistakes.  The last remnant is a rigid boundary at /64.  This
     document removes that rigidity as far as routing is concerned.</t>
 
