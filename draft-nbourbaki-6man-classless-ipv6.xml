@@ -120,7 +120,7 @@ don't een need /64 for SLAAC, except for backward compatibility. (*)
     Standard such as, for example, Stateless Address AutoConfiguration
     <xref target="RFC4862"/>, or Using 127-Bit IPv6 Prefixes on
     Inter-Router Links <xref target="RFC6164"/> is in use.</t>
-    
+
         </section>
 
   <section anchor="notes" title="Notes and Recommendations">
@@ -190,6 +190,8 @@ don't een need /64 for SLAAC, except for backward compatibility. (*)
   <references title="Normative References">
     <?rfc include="reference.RFC.2460"?>
     <?rfc include="reference.RFC.4291"?>
+    <?rfc include="reference.RFC.7217"?>
+    <?rfc include="reference.RFC.8064"?>
     </references>
 
   <references title="Informative References">
@@ -198,7 +200,6 @@ don't een need /64 for SLAAC, except for backward compatibility. (*)
     <?rfc include="reference.RFC.3587"?>
     <?rfc include="reference.RFC.4632"?>
     <?rfc include="reference.RFC.7136"?>
-    <?rfc include="reference.RFC.7217"?>
     <?rfc include="reference.RFC.7721"?>
     <?rfc include="reference.I-D.hinden-6man-rfc2464bis"?>
     </references>
