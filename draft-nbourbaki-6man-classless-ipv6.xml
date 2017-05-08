@@ -30,15 +30,16 @@
       </address>
     </author>
 
-  <date month="April" year="2017"/>
+  <date month="May" year="2017"/>
 
   <abstract>
 
     <t>Over the history of IPv6, various classful address models have
-    been proposed, particularly Top-Level Aggregation (TLA) and
-    Next-Level Aggregation (NLA) Identifiers.  They have all proved to be
-    mistakes.  The last remnant is a rigid boundary at /64.  This
-    document removes that rigidity as far as routing is concerned.</t>
+    been proposed, maybe the most notable being Top-Level Aggregation
+    (TLA) and Next-Level Aggregation (NLA) Identifiers.  They have all
+    proved to be mistakes.  The last remnant is a rigid boundary at /64.
+    This document removes that boundary as far as routing and addressing
+    are concerned.</t>
 
     </abstract>
 
@@ -60,12 +61,13 @@
   <section anchor="intro" title="Introduction">
 
     <t>Over the history of IPv6, various classful address models have
-    been proposed, particularly Top-Level Aggregation (TLA) and
-    Next-Level Aggregation(NLA) Identifiers.  They have all proved to be
-    mistakes. For example, TLA and NLA were obsoleted by <xref
-    target="RFC3587"/>.  The last remnant is a rigid boundary at
-    /64. This document removes that rigidity as far as routing is
-    concerned.</t>
+    been proposed, maybe the most notable being Top-Level Aggregation
+    (TLA) and Next-Level Aggregation (NLA) Identifiers; see, for
+    example, <xref target="RFC2450"/>.  They have all proved to be
+    mistakes.  For example, TLA and NLA were obsoleted by <xref
+    target="RFC3587"/>.  The last remnant is a rigid boundary at /64.
+    This document removes that boundary as far as routing and addressing
+    are concerned.</t>
 
     </section>
 
@@ -73,7 +75,7 @@
   
     <t>It is assumed that the reader understands the history of classful
     addressing in IPv4 and why it was abolished <xref
-    target="RFC4632"/>. Of course, the acute need to conserve address
+    target="RFC4632"/>.  Of course, the acute need to conserve address
     space that forced the adoption of classless addressing for IPv4 does
     not apply to IPv6; but the arguments for operational flexibility in
     address allocation remain compelling.</t>
@@ -98,23 +100,16 @@ backward compatibility. (*)
 rate is low enough. 
 -->
     
-    <t>An important recent development in IPv6 is that for host
-    computers on local area networks, the way in which interface
-    identifiers are formed is no longer bound to layer 2 addresses (MAC
-    addresses) <xref target="RFC7217"/> <xref target="RFC8064"/>.  We
-    can therefore appreciate that their length, previously fixed at 64
-    bits <xref target="RFC7136"/>, is in fact a free parameter as stated
-    in <xref target="RFC4862"/>.</t>
+    <t>An important recent IPv6 development was that, for host computers
+    on local area networks, the way in which interface identifiers were
+    formed was no longer bound to layer 2 addresses (MACs) <xref
+    target="RFC7217"/> <xref target="RFC8064"/>.  Therefore their
+    length, previously fixed at 64 bits <xref target="RFC7136"/>, is in
+    fact a free parameter as stated in <xref target="RFC4862"/>.</t>
 
     </section>
 
   <section anchor="background" title="Background">
-
-<!--
-    <t>To quote Lorenzo Colitti in the working group meeting at IETF 98,
-    "Just because this is being elevated to full standard does not mean
-    it can not be changed tomorrow."  Tomorrow is here.</t>
--->
 
     <t>Some confusion has been caused by the IP Version 6 Addressing
     Architecture, <xref target="RFC4291"/>, and the proposed changes in
@@ -124,18 +119,22 @@ rate is low enough.
     <t>Meanwhile, link prefixes of varied lengths, /127, /126, /124,
     /120, ... /64 have been successfully deployed for many years.
     Having the formal specification be unclear risks potential
-    mis-implementation by the naive, which could result in operational
+    mis-implementation by the naïve, which could result in operational
     disasters.</t>
 
     </section>
 
   <section anchor="simple" title="A simple Statement">
 
-    <t>To state it simply, IPv6 unicast routing is based on prefixes of
-    any valid length up to 128 except for links where an Internet
+    <t>To state it simply, IPv6 unicast subnetting is based on prefixes
+    of any valid length up to 128 except for links where an Internet
     Standard such as, for example, Stateless Address AutoConfiguration
     <xref target="RFC4862"/>, or Using 127-Bit IPv6 Prefixes on
     Inter-Router Links <xref target="RFC6164"/> is in use.</t>
+
+    <t>Nodes must always support rotuing on any valid length, even if
+    SLAAC or other standards are in use because routing could choose to
+    differentiate at a different granularity.</t>
 
 <!-- [fgont] I think these section is mixing up to things:
 
@@ -162,46 +161,41 @@ rate is low enough.
 
     <t>The length of the Interface Identifier in Stateless Address
     AutoConfiguration <xref target="RFC4862"/> is a parameter; its
-    length needs to be sufficient for effective randomization for
-    privacy reasons.  For example, a /48 might be sufficient.  But
-    operationally we RECOMMEND, barring strong considerations to the
-    contrary, using 64-bits for SLAAC in order not to discover bugs
-    where 64-bits was hard-coded, and to favor portability of devices
-    and operating systems.</t>
+    length SHOULD be sufficient for effective randomization for privacy
+    reasons.  For example, a /48 might be sufficient.  But operationally
+    we RECOMMEND, barring strong considerations to the contrary, using
+    64-bits for SLAAC in order not to discover bugs where 64 was
+    hard-coded, and to favor portability of devices and operating
+    systems.</t>
     
     <t>None the less, there is no reason in theory why an IPv6 node
     should not operate with different interface identfier lengths on
     different physical interfaces.  Thus a correct implementation of
-    SLAAC must in fact allow for any length of prefix, with the value
-    being parameterised per interface. For instance, the Interface
-    Identifier length in the recommended (see <xref target="RFC8064"/>)
-    algorithm for selecting stable interface identifiers <xref
-    target="RFC7217"/> is a parameter, rather than a hardcoded
-    value.</t>
+    SLAAC must in fact allow for any prefix length, with the value being
+    a parameter per interface.  For instance, the Interface Identifier
+    length in the recommended (see <xref target="RFC8064"/>) algorithm
+    for selecting stable interface identifiers <xref target="RFC7217"/>
+    is a parameter, rather than a hardcoded value.</t>
     
-    <t>NOTE: should we comment on the fact that at least Linux and
-    Windows seem to assume that the default prefix is /64 in the
-    management CLI?</t>
-
     </section>
 
   <section anchor="security" title="Security Considerations">
 
     <t>Assumming that nodes employ unpredictable interface identifiers
     <xref target="RFC7721"/>, the subnet size may have an impact on some
-    security and privacy properties of a network. Namely, the smaller
+    security and privacy properties of a network.  Namely, the smaller
     the subnet size, the more feasible it becomes to perform IPv6
     address scans <xref target="RFC7707"/> <xref target="RFC7721"/>.
-    However, that for some specific subnets (such as point to point
-    links), this may be less of an issue.</t>
+    For some specific subnets, such as point to point links, this may
+    be less of an issue.</t>
 
     <t>On the other hand, we assume that a number of IPv6
     implementations fail to enforce limits on the size of some of the
     data structures they employ for communicating with neighboring
-    nodes, such as the Neighbor Cache. In such cases, the use of smaller
-    subnets essentially enforces an operational limit on such data
-    structures, thus helping mitigate some pathological behaviors (such
-    as Neighbor Cache Exhaustion attacks).</t>
+    nodes, such as the Neighbor Cache.  In such cases, the use of
+    smaller subnets forces an operational limit on such data structures,
+    thus helping mitigate some pathological behaviors (such as Neighbor
+    Cache Exhaustion attacks).</t>
 
     <!-- [fgont] Still need to add references here... e.g. to Joel's RFC -->
     </section>
@@ -237,6 +231,7 @@ rate is low enough.
 
   <references title="Normative References">
     <?rfc include="reference.RFC.2119"?>
+    <?rfc include="reference.RFC.2450"?>
     <?rfc include="reference.RFC.2460"?>
     <?rfc include="reference.RFC.4291"?>
     <?rfc include="reference.RFC.7217"?>
