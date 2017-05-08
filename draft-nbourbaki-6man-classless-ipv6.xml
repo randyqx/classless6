@@ -42,6 +42,17 @@
 
     </abstract>
 
+  <note title="Requirements Language">
+
+    <t>The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL
+      NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED", "MAY", and "OPTIONAL"
+      are to be interpreted as described in <xref target="RFC2119">RFC
+      2119</xref> only when they appear in all upper case.  They may
+      also appear in lower or mixed case as English words, without
+      normative meaning.</t>
+
+    </note>
+
   </front>
 
 <middle>
@@ -209,8 +220,8 @@ rate is low enough.
   <section anchor="authors" title="Authors">
 
     <t>The original draft was by Randy Bush, who was immediately aided
-    and abetted by Brian Carpenter, Chris Morrow, Fernando Gont, Job
-    Snijders, [ your name here ].</t>
+    and abetted by Brian Carpenter, Chris Morrow, Fernando Gont, Geoff
+    Huston, Job Snijders, [ your name here ].</t>
 
     </section>
 
@@ -225,6 +236,7 @@ rate is low enough.
 <back>
 
   <references title="Normative References">
+    <?rfc include="reference.RFC.2119"?>
     <?rfc include="reference.RFC.2460"?>
     <?rfc include="reference.RFC.4291"?>
     <?rfc include="reference.RFC.7217"?>
