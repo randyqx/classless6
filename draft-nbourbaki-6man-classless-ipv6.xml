@@ -35,9 +35,10 @@
   <abstract>
 
     <t>Over the history of IPv6, various classful address models have
-    been proposed, maybe the most notable being Top-Level Aggregation
+    been proposed, with the most notable being Top-Level Aggregation
     (TLA) and Next-Level Aggregation (NLA) Identifiers.  They have all
-    proved to be mistakes.  The last remnant is a rigid boundary at /64.
+    proved to be mistakes.  The last remnant of classful addressing is
+    a rigid network / interface identifier boundary at /64.
     This document removes that boundary as far as routing and addressing
     are concerned.</t>
 
@@ -65,13 +66,25 @@
   <section anchor="intro" title="Introduction">
 
     <t>Over the history of IPv6, various classful address models have
-    been proposed, maybe the most notable being Top-Level Aggregation
+    been proposed, with the most notable being Top-Level Aggregation
     (TLA) and Next-Level Aggregation (NLA) Identifiers; see, for
     example, <xref target="RFC2450"/>.  They have all proved to be
     mistakes.  For example, TLA and NLA were obsoleted by <xref
-    target="RFC3587"/>.  The last remnant is a rigid boundary at /64.
+    target="RFC3587"/>.  The last remnant of classful addressing is a 
+    rigid network / interface identifier boundary at /64.
     This document removes that boundary as far as routing and addressing
     are concerned.</t>
+
+    <t>Some confusion has been caused by the IP Version 6 Addressing
+    Architecture, <xref target="RFC4291"/>, and the proposed changes in
+    <xref target="I-D.hinden-6man-rfc4291bis"/> with respect to the
+    minimum subnet size.</t>
+    
+    <t>Meanwhile, link prefixes of varied lengths, /127, /126, /124,
+    /120, ... /64 have been successfully deployed for many years.
+    Having the formal specification be unclear risks potential
+    mis-implementation by the naïve, which could result in operational
+    disasters.</t>
 
     </section>
 
@@ -109,36 +122,23 @@ rate is low enough.
     formed was no longer bound to layer 2 addresses (MACs) <xref
     target="RFC7217"/> <xref target="RFC8064"/>.  Therefore their
     length, previously fixed at 64 bits <xref target="RFC7136"/>, is in
-    fact a free parameter as stated in <xref target="RFC4862"/>.</t>
+    fact a variably-sized parameter as stated in <xref target="RFC4862"/>.</t>
 
     </section>
 
-  <section anchor="background" title="Background">
-
-    <t>Some confusion has been caused by the IP Version 6 Addressing
-    Architecture, <xref target="RFC4291"/>, and the proposed changes in
-    <xref target="I-D.hinden-6man-rfc4291bis"/> with respect to the
-    minimum subnet size.</t>
-    
-    <t>Meanwhile, link prefixes of varied lengths, /127, /126, /124,
-    /120, ... /64 have been successfully deployed for many years.
-    Having the formal specification be unclear risks potential
-    mis-implementation by the naïve, which could result in operational
-    disasters.</t>
-
-    </section>
 
   <section anchor="simple" title="A simple Statement">
 
     <t>To state it simply, IPv6 unicast subnetting is based on prefixes
     of any valid length up to 128 except for links where an Internet
-    Standard such as, for example, Stateless Address AutoConfiguration
+    Standard such as, for example, Stateless Address AutoConfiguration (SLAAC)
     <xref target="RFC4862"/>, or Using 127-Bit IPv6 Prefixes on
     Inter-Router Links <xref target="RFC6164"/> is in use.</t>
 
-    <t>Nodes must always support rotuing on any valid length, even if
-    SLAAC or other standards are in use because routing could choose to
-    differentiate at a different granularity.</t>
+    <t>Nodes must always support routing on any valid network prefix length, even if
+    SLAAC or other standards are in use, because routing could choose to
+    differentiate at a different granularity than is used by any such automated link local
+    address configuration tools.</t>
 
 <!-- [fgont] I think these section is mixing up to things:
 
@@ -174,7 +174,7 @@ rate is low enough.
     
     <t>None the less, there is no reason in theory why an IPv6 node
     should not operate with different interface identfier lengths on
-    different physical interfaces.  Thus a correct implementation of
+    different physical interfaces.  Thus, a correct implementation of
     SLAAC must in fact allow for any prefix length, with the value being
     a parameter per interface.  For instance, the Interface Identifier
     length in the recommended (see <xref target="RFC8064"/>) algorithm
