@@ -4,8 +4,8 @@
 
 Network Working Group                                        N. Bourbaki
 Internet-Draft                                            The Intertubes
-Intended status: Standards Track                             May 8, 2017
-Expires: November 9, 2017
+Intended status: Standards Track                             May 9, 2017
+Expires: November 10, 2017
 
 
                            IPv6 is Classless
@@ -19,14 +19,6 @@ Abstract
    to be mistakes.  The last remnant is a rigid boundary at /64.  This
    document removes that boundary as far as routing and addressing are
    concerned.
-
-Requirements Language
-
-   The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT",
-   "SHOULD", "SHOULD NOT", "RECOMMENDED", "MAY", and "OPTIONAL" are to
-   be interpreted as described in RFC 2119 [RFC2119] only when they
-   appear in all upper case.  They may also appear in lower or mixed
-   case as English words, without normative meaning.
 
 Status of This Memo
 
@@ -43,20 +35,12 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on November 9, 2017.
+   This Internet-Draft will expire on November 10, 2017.
 
 Copyright Notice
 
    Copyright (c) 2017 IETF Trust and the persons identified as the
    document authors.  All rights reserved.
-
-
-
-
-Bourbaki                Expires November 9, 2017                [Page 1]
-
-Internet-Draft              IPv6 is Classless                   May 2017
-
 
    This document is subject to BCP 78 and the IETF Trust's Legal
    Provisions Relating to IETF Documents
@@ -65,6 +49,15 @@ Internet-Draft              IPv6 is Classless                   May 2017
    carefully, as they describe your rights and restrictions with respect
    to this document.  Code Components extracted from this document must
    include Simplified BSD License text as described in Section 4.e of
+
+
+
+
+Bourbaki                Expires November 10, 2017               [Page 1]
+
+Internet-Draft              IPv6 is Classless                   May 2017
+
+
    the Trust Legal Provisions and are provided without warranty as
    described in the Simplified BSD License.
 
@@ -82,7 +75,7 @@ Table of Contents
    10. References  . . . . . . . . . . . . . . . . . . . . . . . . .   4
      10.1.  Normative References . . . . . . . . . . . . . . . . . .   4
      10.2.  Informative References . . . . . . . . . . . . . . . . .   5
-   Author's Address  . . . . . . . . . . . . . . . . . . . . . . . .   6
+   Author's Address  . . . . . . . . . . . . . . . . . . . . . . . .   5
 
 1.  Introduction
 
@@ -105,15 +98,6 @@ Table of Contents
 
    It is also assumed that the reader understands IPv6 [RFC2460], the IP
    Version 6 Addressing Architecture [RFC4291], the proposed changes to
-
-
-
-
-Bourbaki                Expires November 9, 2017                [Page 2]
-
-Internet-Draft              IPv6 is Classless                   May 2017
-
-
    RFC4291 [I-D.hinden-6man-rfc4291bis], and the recent recommendations
    for the generation of stable Interface Identifiers [RFC8064].
 
@@ -122,6 +106,13 @@ Internet-Draft              IPv6 is Classless                   May 2017
    formed was no longer bound to layer 2 addresses (MACs) [RFC7217]
    [RFC8064].  Therefore their length, previously fixed at 64 bits
    [RFC7136], is in fact a free parameter as stated in [RFC4862].
+
+
+
+Bourbaki                Expires November 10, 2017               [Page 2]
+
+Internet-Draft              IPv6 is Classless                   May 2017
+
 
 3.  Background
 
@@ -149,12 +140,12 @@ Internet-Draft              IPv6 is Classless                   May 2017
 5.  Recommendations
 
    For historical reasons, when a prefix is needed on a link, barring
-   other considerations, a /64 is RECOMMENDED [RFC7136].
+   other considerations, a /64 is recommended [RFC7136].
 
    The length of the Interface Identifier in Stateless Address
    AutoConfiguration [RFC4862] is a parameter; its length SHOULD be
    sufficient for effective randomization for privacy reasons.  For
-   example, a /48 might be sufficient.  But operationally we RECOMMEND,
+   example, a /48 might be sufficient.  But operationally we recommend,
    barring strong considerations to the contrary, using 64-bits for
    SLAAC in order not to discover bugs where 64 was hard-coded, and to
    favor portability of devices and operating systems.
@@ -162,18 +153,22 @@ Internet-Draft              IPv6 is Classless                   May 2017
    None the less, there is no reason in theory why an IPv6 node should
    not operate with different interface identfier lengths on different
    physical interfaces.  Thus a correct implementation of SLAAC must in
-
-
-
-Bourbaki                Expires November 9, 2017                [Page 3]
-
-Internet-Draft              IPv6 is Classless                   May 2017
-
-
    fact allow for any prefix length, with the value being a parameter
    per interface.  For instance, the Interface Identifier length in the
    recommended (see [RFC8064]) algorithm for selecting stable interface
    identifiers [RFC7217] is a parameter, rather than a hardcoded value.
+
+
+
+
+
+
+
+
+Bourbaki                Expires November 10, 2017               [Page 3]
+
+Internet-Draft              IPv6 is Classless                   May 2017
+
 
 6.  Security Considerations
 
@@ -209,22 +204,11 @@ Internet-Draft              IPv6 is Classless                   May 2017
 
 10.1.  Normative References
 
-   [RFC2119]  Bradner, S., "Key words for use in RFCs to Indicate
-              Requirement Levels", BCP 14, RFC 2119, March 1997.
-
    [RFC2450]  Hinden, R., "Proposed TLA and NLA Assignment Rules",
               RFC 2450, December 1998.
 
    [RFC2460]  Deering, S. and R. Hinden, "Internet Protocol, Version 6
               (IPv6) Specification", RFC 2460, December 1998.
-
-
-
-
-Bourbaki                Expires November 9, 2017                [Page 4]
-
-Internet-Draft              IPv6 is Classless                   May 2017
-
 
    [RFC4291]  Hinden, R. and S. Deering, "IP Version 6 Addressing
               Architecture", RFC 4291, February 2006.
@@ -234,6 +218,13 @@ Internet-Draft              IPv6 is Classless                   May 2017
               Autoconfiguration (SLAAC)", RFC 7217,
               DOI 10.17487/RFC7217, April 2014,
               <http://www.rfc-editor.org/info/rfc7217>.
+
+
+
+Bourbaki                Expires November 10, 2017               [Page 4]
+
+Internet-Draft              IPv6 is Classless                   May 2017
+
 
    [RFC8064]  Gont, F., Cooper, A., Thaler, D., and W. Liu,
               "Recommendation on Stable IPv6 Interface Identifiers",
@@ -274,14 +265,6 @@ Internet-Draft              IPv6 is Classless                   May 2017
               RFC 7721, DOI 10.17487/RFC7721, March 2016,
               <http://www.rfc-editor.org/info/rfc7721>.
 
-
-
-
-Bourbaki                Expires November 9, 2017                [Page 5]
-
-Internet-Draft              IPv6 is Classless                   May 2017
-
-
 Author's Address
 
    Nicolas Bourbaki
@@ -294,43 +277,4 @@ Author's Address
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Bourbaki                Expires November 9, 2017                [Page 6]
+Bourbaki                Expires November 10, 2017               [Page 5]
