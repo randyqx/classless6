@@ -122,7 +122,8 @@ rate is low enough.
     formed was no longer bound to layer 2 addresses (MACs) <xref
     target="RFC7217"/> <xref target="RFC8064"/>.  Therefore their
     length, previously fixed at 64 bits <xref target="RFC7136"/>, is in
-    fact a variably-sized parameter as stated in <xref target="RFC4862"/>.</t>
+    fact a variably-sized parameter as stated in <xref
+    target="RFC4862"/>.</t>
 
     </section>
 
@@ -131,14 +132,15 @@ rate is low enough.
 
     <t>To state it simply, IPv6 unicast subnetting is based on prefixes
     of any valid length up to 128 except for links where an Internet
-    Standard such as, for example, Stateless Address AutoConfiguration (SLAAC)
-    <xref target="RFC4862"/>, or Using 127-Bit IPv6 Prefixes on
+    Standard such as, for example, Stateless Address AutoConfiguration
+    (SLAAC) <xref target="RFC4862"/>, or Using 127-Bit IPv6 Prefixes on
     Inter-Router Links <xref target="RFC6164"/> is in use.</t>
 
-    <t>Nodes must always support routing on any valid network prefix length, even if
-    SLAAC or other standards are in use, because routing could choose to
-    differentiate at a different granularity than is used by any such automated link local
-    address configuration tools.</t>
+    <t>Nodes must always support routing on any valid network prefix
+    length, even if SLAAC or other standards are in use, because routing
+    could choose to differentiate at a different granularity than is
+    used by any such automated link local address configuration
+    tools.</t>
 
 <!-- [fgont] I think these section is mixing up to things:
 
@@ -153,9 +155,7 @@ rate is low enough.
                should be able to employ any subnet size that they
                please, except when slaac is in use (for backwards
                compatibility) or e.g. when /127 (or the like) prefixes
-               are employed for point to point links.
--->
-        </section>
+               are employed for point to point links.  --> </section>
 
   <section anchor="notes" title="Recommendations">
 
@@ -190,8 +190,8 @@ rate is low enough.
     security and privacy properties of a network.  Namely, the smaller
     the subnet size, the more feasible it becomes to perform IPv6
     address scans <xref target="RFC7707"/> <xref target="RFC7721"/>.
-    For some specific subnets, such as point to point links, this may
-    be less of an issue.</t>
+    For some specific subnets, such as point to point links, this may be
+    less of an issue.</t>
 
     <t>On the other hand, we assume that a number of IPv6
     implementations fail to enforce limits on the size of some of the

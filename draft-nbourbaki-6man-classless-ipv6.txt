@@ -14,11 +14,11 @@ Expires: November 10, 2017
 Abstract
 
    Over the history of IPv6, various classful address models have been
-   proposed, maybe the most notable being Top-Level Aggregation (TLA)
-   and Next-Level Aggregation (NLA) Identifiers.  They have all proved
-   to be mistakes.  The last remnant is a rigid boundary at /64.  This
-   document removes that boundary as far as routing and addressing are
-   concerned.
+   proposed, with the most notable being Top-Level Aggregation (TLA) and
+   Next-Level Aggregation (NLA) Identifiers.  They have all proved to be
+   mistakes.  The last remnant of classful addressing is a rigid network
+   / interface identifier boundary at /64.  This document removes that
+   boundary as far as routing and addressing are concerned.
 
 Status of This Memo
 
@@ -65,56 +65,27 @@ Table of Contents
 
    1.  Introduction  . . . . . . . . . . . . . . . . . . . . . . . .   2
    2.  Suggested Reading . . . . . . . . . . . . . . . . . . . . . .   2
-   3.  Background  . . . . . . . . . . . . . . . . . . . . . . . . .   3
-   4.  A simple Statement  . . . . . . . . . . . . . . . . . . . . .   3
-   5.  Recommendations . . . . . . . . . . . . . . . . . . . . . . .   3
-   6.  Security Considerations . . . . . . . . . . . . . . . . . . .   4
-   7.  IANA Considerations . . . . . . . . . . . . . . . . . . . . .   4
-   8.  Authors . . . . . . . . . . . . . . . . . . . . . . . . . . .   4
-   9.  Acknowledgments . . . . . . . . . . . . . . . . . . . . . . .   4
-   10. References  . . . . . . . . . . . . . . . . . . . . . . . . .   4
-     10.1.  Normative References . . . . . . . . . . . . . . . . . .   4
-     10.2.  Informative References . . . . . . . . . . . . . . . . .   5
+   3.  A simple Statement  . . . . . . . . . . . . . . . . . . . . .   3
+   4.  Recommendations . . . . . . . . . . . . . . . . . . . . . . .   3
+   5.  Security Considerations . . . . . . . . . . . . . . . . . . .   4
+   6.  IANA Considerations . . . . . . . . . . . . . . . . . . . . .   4
+   7.  Authors . . . . . . . . . . . . . . . . . . . . . . . . . . .   4
+   8.  Acknowledgments . . . . . . . . . . . . . . . . . . . . . . .   4
+   9.  References  . . . . . . . . . . . . . . . . . . . . . . . . .   4
+     9.1.  Normative References  . . . . . . . . . . . . . . . . . .   4
+     9.2.  Informative References  . . . . . . . . . . . . . . . . .   5
    Author's Address  . . . . . . . . . . . . . . . . . . . . . . . .   5
 
 1.  Introduction
 
    Over the history of IPv6, various classful address models have been
-   proposed, maybe the most notable being Top-Level Aggregation (TLA)
-   and Next-Level Aggregation (NLA) Identifiers; see, for example,
+   proposed, with the most notable being Top-Level Aggregation (TLA) and
+   Next-Level Aggregation (NLA) Identifiers; see, for example,
    [RFC2450].  They have all proved to be mistakes.  For example, TLA
-   and NLA were obsoleted by [RFC3587].  The last remnant is a rigid
-   boundary at /64.  This document removes that boundary as far as
-   routing and addressing are concerned.
-
-2.  Suggested Reading
-
-   It is assumed that the reader understands the history of classful
-   addressing in IPv4 and why it was abolished [RFC4632].  Of course,
-   the acute need to conserve address space that forced the adoption of
-   classless addressing for IPv4 does not apply to IPv6; but the
-   arguments for operational flexibility in address allocation remain
-   compelling.
-
-   It is also assumed that the reader understands IPv6 [RFC2460], the IP
-   Version 6 Addressing Architecture [RFC4291], the proposed changes to
-   RFC4291 [I-D.hinden-6man-rfc4291bis], and the recent recommendations
-   for the generation of stable Interface Identifiers [RFC8064].
-
-   An important recent IPv6 development was that, for host computers on
-   local area networks, the way in which interface identifiers were
-   formed was no longer bound to layer 2 addresses (MACs) [RFC7217]
-   [RFC8064].  Therefore their length, previously fixed at 64 bits
-   [RFC7136], is in fact a free parameter as stated in [RFC4862].
-
-
-
-Bourbaki                Expires November 10, 2017               [Page 2]
-
-Internet-Draft              IPv6 is Classless                   May 2017
-
-
-3.  Background
+   and NLA were obsoleted by [RFC3587].  The last remnant of classful
+   addressing is a rigid network / interface identifier boundary at /64.
+   This document removes that boundary as far as routing and addressing
+   are concerned.
 
    Some confusion has been caused by the IP Version 6 Addressing
    Architecture, [RFC4291], and the proposed changes in
@@ -125,19 +96,50 @@ Internet-Draft              IPv6 is Classless                   May 2017
    formal specification be unclear risks potential mis-implementation by
    the naive, which could result in operational disasters.
 
-4.  A simple Statement
+2.  Suggested Reading
+
+   It is assumed that the reader understands the history of classful
+   addressing in IPv4 and why it was abolished [RFC4632].  Of course,
+   the acute need to conserve address space that forced the adoption of
+   classless addressing for IPv4 does not apply to IPv6; but the
+   arguments for operational flexibility in address allocation remain
+   compelling.
+
+
+
+
+
+Bourbaki                Expires November 10, 2017               [Page 2]
+
+Internet-Draft              IPv6 is Classless                   May 2017
+
+
+   It is also assumed that the reader understands IPv6 [RFC2460], the IP
+   Version 6 Addressing Architecture [RFC4291], the proposed changes to
+   RFC4291 [I-D.hinden-6man-rfc4291bis], and the recent recommendations
+   for the generation of stable Interface Identifiers [RFC8064].
+
+   An important recent IPv6 development was that, for host computers on
+   local area networks, the way in which interface identifiers were
+   formed was no longer bound to layer 2 addresses (MACs) [RFC7217]
+   [RFC8064].  Therefore their length, previously fixed at 64 bits
+   [RFC7136], is in fact a variably-sized parameter as stated in
+   [RFC4862].
+
+3.  A simple Statement
 
    To state it simply, IPv6 unicast subnetting is based on prefixes of
    any valid length up to 128 except for links where an Internet
    Standard such as, for example, Stateless Address AutoConfiguration
-   [RFC4862], or Using 127-Bit IPv6 Prefixes on Inter-Router Links
-   [RFC6164] is in use.
+   (SLAAC) [RFC4862], or Using 127-Bit IPv6 Prefixes on Inter-Router
+   Links [RFC6164] is in use.
 
-   Nodes must always support rotuing on any valid length, even if SLAAC
-   or other standards are in use because routing could choose to
-   differentiate at a different granularity.
+   Nodes must always support routing on any valid network prefix length,
+   even if SLAAC or other standards are in use, because routing could
+   choose to differentiate at a different granularity than is used by
+   any such automated link local address configuration tools.
 
-5.  Recommendations
+4.  Recommendations
 
    For historical reasons, when a prefix is needed on a link, barring
    other considerations, a /64 is recommended [RFC7136].
@@ -152,13 +154,11 @@ Internet-Draft              IPv6 is Classless                   May 2017
 
    None the less, there is no reason in theory why an IPv6 node should
    not operate with different interface identfier lengths on different
-   physical interfaces.  Thus a correct implementation of SLAAC must in
+   physical interfaces.  Thus, a correct implementation of SLAAC must in
    fact allow for any prefix length, with the value being a parameter
    per interface.  For instance, the Interface Identifier length in the
    recommended (see [RFC8064]) algorithm for selecting stable interface
    identifiers [RFC7217] is a parameter, rather than a hardcoded value.
-
-
 
 
 
@@ -170,7 +170,7 @@ Bourbaki                Expires November 10, 2017               [Page 3]
 Internet-Draft              IPv6 is Classless                   May 2017
 
 
-6.  Security Considerations
+5.  Security Considerations
 
    Assumming that nodes employ unpredictable interface identifiers
    [RFC7721], the subnet size may have an impact on some security and
@@ -186,23 +186,23 @@ Internet-Draft              IPv6 is Classless                   May 2017
    operational limit on such data structures, thus helping mitigate some
    pathological behaviors (such as Neighbor Cache Exhaustion attacks).
 
-7.  IANA Considerations
+6.  IANA Considerations
 
    This document has no IANA Considerations.
 
-8.  Authors
+7.  Authors
 
    The original draft was by Randy Bush, who was immediately aided and
    abetted by Brian Carpenter, Chris Morrow, Fernando Gont, Geoff
    Huston, Job Snijders, [ your name here ].
 
-9.  Acknowledgments
+8.  Acknowledgments
 
    The authors wish to thank .
 
-10.  References
+9.  References
 
-10.1.  Normative References
+9.1.  Normative References
 
    [RFC2450]  Hinden, R., "Proposed TLA and NLA Assignment Rules",
               RFC 2450, December 1998.
@@ -231,7 +231,7 @@ Internet-Draft              IPv6 is Classless                   May 2017
               RFC 8064, DOI 10.17487/RFC8064, February 2017,
               <http://www.rfc-editor.org/info/rfc8064>.
 
-10.2.  Informative References
+9.2.  Informative References
 
    [I-D.hinden-6man-rfc4291bis]
               Hinden, B. and S. Deering, "IP Version 6 Addressing
