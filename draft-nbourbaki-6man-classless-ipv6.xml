@@ -45,7 +45,6 @@
     </abstract>
 
 <!--
-
   <note title="Requirements Language">
 
     <t>The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL
@@ -56,7 +55,6 @@
       normative meaning.</t>
 
     </note>
-
 -->
 
   </front>
@@ -132,9 +130,10 @@ rate is low enough.
 
     <t>To state it simply, IPv6 unicast subnetting is based on prefixes
     of any valid length up to 128 except for links where an Internet
-    Standard such as, for example, Stateless Address AutoConfiguration
+    Standard, that has nothing to do with routing, may impose a
+    particular length.  Examples are Stateless Address AutoConfiguration
     (SLAAC) <xref target="RFC4862"/>, or Using 127-Bit IPv6 Prefixes on
-    Inter-Router Links <xref target="RFC6164"/> is in use.</t>
+    Inter-Router Links <xref target="RFC6164"/>.</t>
 
     <t>Nodes must always support routing on any valid network prefix
     length, even if SLAAC or other standards are in use, because routing
@@ -155,7 +154,9 @@ rate is low enough.
                should be able to employ any subnet size that they
                please, except when slaac is in use (for backwards
                compatibility) or e.g. when /127 (or the like) prefixes
-               are employed for point to point links.  --> </section>
+               are employed for point to point links.
+-->
+    </section>
 
   <section anchor="notes" title="Recommendations">
 
@@ -202,6 +203,7 @@ rate is low enough.
     Cache Exhaustion attacks).</t>
 
     <!-- [fgont] Still need to add references here... e.g. to Joel's RFC -->
+
     </section>
 
   <section anchor="iana" title="IANA Considerations">
@@ -253,6 +255,7 @@ rate is low enough.
     <?rfc include="reference.RFC.7136"?>
     <?rfc include="reference.RFC.7721"?>
     <?rfc include="reference.I-D.hinden-6man-rfc4291bis"?>
+    <?rfc include="reference.I-D.hinden-6man-rfc2464bis"?>
     </references>
 
   </back>
