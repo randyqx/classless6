@@ -1,4 +1,4 @@
-<?xml version="1.0"?>
+﻿<?xml version="1.0"?>
 <!DOCTYPE rfc SYSTEM "rfc2629.dtd">
 <?rfc comments="yes"?>
 <?rfc compact="yes"?>
@@ -97,12 +97,30 @@
     not apply to IPv6; but the arguments for operational flexibility in
     address allocation remain compelling.</t>
 
+<<<<<<< HEAD
+    <t>It is also assumed that the reader understands IPv6, <xref
+    target="RFC2460"/>, IP Version 6 Addressing Architecture, see <xref
+    target="RFC4291"/>, and the proposed changes to RFC4291 <xref
+    target="I-D.hinden-6man-rfc4291bis"/>
+    and RFC2464 <xref target="I-D.hinden-6man-rfc2464bis"/>.</t>
+    
+    <t>NOTE: do we mean 4291bis (currently moribund) or 2464bis?</t>
+    
+    <t>An important recent development in IPv6 is that for host
+    computers on local area networks, the way in which interface
+    identifiers are formed is no longer bound to layer 2 addresses (MAC
+    addresses) <xref target="RFC7217"/>.  We can therefore appreciate
+    that their length, previously fixed at 64 bits <xref
+    target="RFC7136"/>, is in fact a free parameter as stated in <xref
+    target="RFC4862"/>.</t>
+=======
     <t>It is also assumed that the reader understands IPv6 <xref
     target="RFC2460"/>, the IP Version 6 Addressing Architecture <xref
     target="RFC4291"/>, the proposed changes to RFC4291 <xref
     target="I-D.hinden-6man-rfc4291bis"/>, and the recent
     recommendations for the generation of stable Interface Identifiers
     <xref target="RFC8064"/>.</t>
+>>>>>>> origin/master
 
 <!--     
     <t>NOTE: do we mean 4291bis (currently moribund) or 2464bis?</t>
@@ -130,11 +148,22 @@ rate is low enough.
 
   <section anchor="simple" title="A simple Statement">
 
+<<<<<<< HEAD
+    <t>To state it simply, IPv6 unicast routing is based on prefixes of
+    any valid length up to 128 except for links where an Internet
+    Standard that has nothing to do with routing may impose a
+    particular length. Examples are Stateless Address AutoConfiguration
+    <xref target="RFC4862"/>, or Using 127-Bit IPv6 Prefixes on
+    Inter-Router Links <xref target="RFC6164"/>.</t>
+    
+        </section>
+=======
     <t>To state it simply, IPv6 unicast subnetting is based on prefixes
     of any valid length up to 128 except for links where an Internet
     Standard such as, for example, Stateless Address AutoConfiguration
     (SLAAC) <xref target="RFC4862"/>, or Using 127-Bit IPv6 Prefixes on
     Inter-Router Links <xref target="RFC6164"/> is in use.</t>
+>>>>>>> origin/master
 
     <t>Nodes must always support routing on any valid network prefix
     length, even if SLAAC or other standards are in use, because routing
@@ -252,6 +281,10 @@ rate is low enough.
     <?rfc include="reference.RFC.7707"?>
     <?rfc include="reference.RFC.7136"?>
     <?rfc include="reference.RFC.7721"?>
+<<<<<<< HEAD
+    <?rfc include="reference.I-D.hinden-6man-rfc2464bis"?>
+=======
+>>>>>>> origin/master
     <?rfc include="reference.I-D.hinden-6man-rfc4291bis"?>
     </references>
 
