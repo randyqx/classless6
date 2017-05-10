@@ -1,4 +1,4 @@
-<?xml version="1.0"?>
+﻿<?xml version="1.0"?>
 <!DOCTYPE rfc SYSTEM "rfc2629.dtd">
 <?rfc comments="yes"?>
 <?rfc compact="yes"?>
@@ -77,7 +77,7 @@
 
     <t>Some confusion has been caused by the IP Version 6 Addressing
     Architecture, <xref target="RFC4291"/>, and the proposed changes in
-    <xref target="I-D.hinden-6man-rfc4291bis"/> with respect to the
+    <xref target="I-D.ietf-6man-rfc4291bis"/> with respect to the
     minimum subnet size.</t>
     
     <t>Meanwhile, link prefixes of varied lengths, /127, /126, /124,
@@ -100,7 +100,8 @@
     <t>It is also assumed that the reader understands IPv6 <xref
     target="RFC2460"/>, the IP Version 6 Addressing Architecture <xref
     target="RFC4291"/>, the proposed changes to RFC4291 <xref
-    target="I-D.hinden-6man-rfc4291bis"/>, and the recent
+    target="I-D.ietf-6man-rfc4291bis"/> and RFC2464
+    <xref target="I-D.hinden-6man-rfc2464bis"/>, and the recent
     recommendations for the generation of stable Interface Identifiers
     <xref target="RFC8064"/>.</t>
 
@@ -132,9 +133,10 @@ rate is low enough.
 
     <t>To state it simply, IPv6 unicast subnetting is based on prefixes
     of any valid length up to 128 except for links where an Internet
-    Standard such as, for example, Stateless Address AutoConfiguration
+    Standard that has nothing to do with routing may impose a
+    particular length. Examples are Stateless Address AutoConfiguration
     (SLAAC) <xref target="RFC4862"/>, or Using 127-Bit IPv6 Prefixes on
-    Inter-Router Links <xref target="RFC6164"/> is in use.</t>
+    Inter-Router Links <xref target="RFC6164"/>.</t>
 
     <t>Nodes must always support routing on any valid network prefix
     length, even if SLAAC or other standards are in use, because routing
@@ -252,7 +254,8 @@ rate is low enough.
     <?rfc include="reference.RFC.7707"?>
     <?rfc include="reference.RFC.7136"?>
     <?rfc include="reference.RFC.7721"?>
-    <?rfc include="reference.I-D.hinden-6man-rfc4291bis"?>
+    <?rfc include="reference.I-D.ietf-6man-rfc4291bis"?>
+    <?rfc include="reference.I-D.hinden-6man-rfc2464bis"?>
     </references>
 
   </back>
