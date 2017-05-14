@@ -17,8 +17,8 @@ Abstract
    Over the history of IPv6, various classful address models have been
    proposed, none of which has withstood the test of time.  The last
    remnant of IPv6 classful addressing is a rigid network interface
-   identifier boundary at /64.  This document removes that boundary for
-   routing and interface addressing.
+   identifier boundary at /64.  This document removes the fixed position
+   of that boundary for interface addressing.
 
 Status of This Memo
 
@@ -83,8 +83,8 @@ Table of Contents
    Level Aggregation (TLA) and Next-Level Aggregation (NLA) Identifiers
    [RFC2450], but was obsoleted by [RFC3587], leaving a single remnant
    of classful addressing in IPv6: a rigid network interface identifier
-   boundary at /64.  This document removes that boundary for interface
-   addressing.
+   boundary at /64.  This document removes the fixed position of that
+   boundary for interface addressing.
 
    Recent proposed changes to the IP Version 6 Addressing Architecture
    specification [RFC4291] have caused controversy.  While link prefixes
