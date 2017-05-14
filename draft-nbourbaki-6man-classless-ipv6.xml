@@ -78,6 +78,9 @@
     risk of mis-implementation, which can easily result in serious
     operational problems.</t>
 
+    <t>This document also clarifies that IPv6 routing subnets may be of any
+    length up to 128.</t>
+
     </section>
 
   <section anchor="reading" title="Suggested Reading">
@@ -130,20 +133,19 @@ rate is low enough.
     </t>
     </section>
 
-  <section anchor="simple" title="A simple Statement">
+  <section anchor="statement" title="Identifier and Subnet Length Statements">
 
-    <t>To state it simply, IPv6 unicast subnetting is based on prefixes
-    of any valid length up to 128 except for links where an Internet
-    Standard that has nothing to do with routing may impose a
-    particular length. Examples are Stateless Address Autoconfiguration
+    <t>IPv6 unicast interfaces may use any subnet length up to 128 except
+    for situations where an Internet Standard document may impose a
+    particular length, for example Stateless Address Autoconfiguration
     (SLAAC) <xref target="RFC4862"/>, or Using 127-Bit IPv6 Prefixes on
     Inter-Router Links <xref target="RFC6164"/>.</t>
 
-    <t>Nodes must always support routing on any valid network prefix
-    length, even if SLAAC or other standards are in use, because routing
-    could choose to differentiate at a different granularity than is
-    used by any such automated link local address configuration
-    tools.</t>
+    <t>Additionally, this document clarifies that a node or router MUST
+    support routing of any valid network prefix length, even if SLAAC or
+    other standards are in use, because routing could choose to
+    differentiate at a different granularity than is used by any such
+    automated link local address configuration tools.</t>
 
 <!-- [fgont] I think these section is mixing up to things:
 
@@ -177,7 +179,7 @@ rate is low enough.
     hard-coded, and to favor portability of devices and operating
     systems.</t>
     
-    <t>None the less, there is no reason in theory why an IPv6 node
+    <t>Nonetheless, there is no reason in theory why an IPv6 node
     should not operate with different interface identfier lengths on
     different physical interfaces.  Thus, a correct implementation of
     SLAAC must in fact allow for any prefix length, with the value being
