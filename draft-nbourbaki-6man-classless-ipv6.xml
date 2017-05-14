@@ -14,7 +14,7 @@
 <rfc category="std" docName="draft-bourbaki-6man-classless-ipv6-00" ipr="trust200902" updates="4291">
 
 <front>
-  <title>IPv6 is Classless</title> 
+  <title>IPv6 is Classless</title>
 
   <author fullname="Nicolas Bourbaki" initials="N." surname="Bourbaki">
     <organization>The Intertubes</organization>
@@ -84,7 +84,7 @@
     </section>
 
   <section anchor="reading" title="Suggested Reading">
-  
+
     <t>It is assumed that the reader understands the history of classful
     addressing in IPv4 and why it was abolished <xref
     target="RFC4632"/>.  Of course, the acute need to conserve address
@@ -112,7 +112,7 @@ backward compatibility. (*)
 (*) as long as the local subnet is large enough and the IID collision
 rate is low enough. 
 -->
-    
+
     <t>For host computers on local area networks, generation of interface
     identifiers is no longer necessarily bound to layer 2 addresses (MACs)
     <xref target="RFC7217"/> <xref target="RFC8064"/>.  Therefore their
@@ -178,7 +178,7 @@ rate is low enough.
     64-bits for SLAAC in order not to discover bugs where 64 was
     hard-coded, and to favor portability of devices and operating
     systems.</t>
-    
+
     <t>Nonetheless, there is no reason in theory why an IPv6 node
     should not operate with different interface identfier lengths on
     different physical interfaces.  Thus, a correct implementation of
@@ -187,7 +187,7 @@ rate is low enough.
     length in the recommended (see <xref target="RFC8064"/>) algorithm
     for selecting stable interface identifiers <xref target="RFC7217"/>
     is a parameter, rather than a hardcoded value.</t>
-    
+
     </section>
 
   <section anchor="security" title="Security Considerations">
