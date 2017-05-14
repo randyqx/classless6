@@ -34,13 +34,11 @@
 
   <abstract>
 
-    <t>Over the history of IPv6, various classful address models have
-    been proposed, with the most notable being Top-Level Aggregation
-    (TLA) and Next-Level Aggregation (NLA) Identifiers.  They have all
-    proved to be mistakes.  The last remnant of classful addressing is
-    a rigid network / interface identifier boundary at /64.
-    This document removes that boundary as far as routing and addressing
-    are concerned.</t>
+    <t>Over the history of IPv6, various classful address models have been
+    proposed, none of which has withstood the test of time.  The last
+    remnant of IPv6 classful addressing is a rigid network interface
+    identifier boundary at /64.  This document removes that boundary for
+    routing and interface addressing.</t>
 
     </abstract>
 
@@ -63,26 +61,22 @@
 
   <section anchor="intro" title="Introduction">
 
-    <t>Over the history of IPv6, various classful address models have
-    been proposed, with the most notable being Top-Level Aggregation
-    (TLA) and Next-Level Aggregation (NLA) Identifiers; see, for
-    example, <xref target="RFC2450"/>.  They have all proved to be
-    mistakes.  For example, TLA and NLA were obsoleted by <xref
-    target="RFC3587"/>.  The last remnant of classful addressing is a 
-    rigid network / interface identifier boundary at /64.
-    This document removes that boundary as far as routing and addressing
-    are concerned.</t>
+    <t>Over the history of the IPv6 protocol, several classful addressing
+    models have been proposed.  The most notable example recommended Top-Level
+    Aggregation (TLA) and Next-Level Aggregation (NLA) Identifiers <xref
+    target="RFC2450"/>, but was obsoleted by <xref target="RFC3587"/>, leaving
+    a single remnant of classful addressing in IPv6: a rigid network
+    interface identifier boundary at /64.  This document removes that
+    boundary for interface addressing.</t>
 
-    <t>Some confusion has been caused by the IP Version 6 Addressing
-    Architecture, <xref target="RFC4291"/>, and the proposed changes in
-    <xref target="I-D.ietf-6man-rfc4291bis"/> with respect to the
-    minimum subnet size.</t>
-    
-    <t>Meanwhile, link prefixes of varied lengths, /127, /126, /124,
-    /120, ... /64 have been successfully deployed for many years.
-    Having the formal specification be unclear risks potential
-    mis-implementation by the naïve, which could result in operational
-    disasters.</t>
+    <t>Recent proposed changes to the IP Version 6 Addressing Architecture
+    specification <xref target="RFC4291"/> have caused controversy.
+    While link prefixes of varied lengths, e.g.  /127, /126, /124,
+    /120, ...  /64 have been successfully deployed for many years, glaring
+    mismatches between a formal specification and long-standing field
+    deployment practices are never wise, not least because of the strong
+    risk of mis-implementation, which can easily result in serious
+    operational problems.</t>
 
     </section>
 
@@ -92,15 +86,15 @@
     addressing in IPv4 and why it was abolished <xref
     target="RFC4632"/>.  Of course, the acute need to conserve address
     space that forced the adoption of classless addressing for IPv4 does
-    not apply to IPv6; but the arguments for operational flexibility in
-    address allocation remain compelling.</t>
+    not apply to IPv6, but the arguments for operational flexibility in
+    address assignment remain compelling.</t>
 
     <t>It is also assumed that the reader understands IPv6 <xref
     target="RFC2460"/>, the IP Version 6 Addressing Architecture <xref
     target="RFC4291"/>, the proposed changes to RFC4291 <xref
     target="I-D.ietf-6man-rfc4291bis"/> and RFC2464
-    <xref target="I-D.hinden-6man-rfc2464bis"/>, and the recent
-    recommendations for the generation of stable Interface Identifiers
+    <xref target="I-D.hinden-6man-rfc2464bis"/>, and the IETF
+    recommendation for the generation of stable Interface Identifiers
     <xref target="RFC8064"/>.</t>
 
 <!--     
@@ -116,16 +110,25 @@ backward compatibility. (*)
 rate is low enough. 
 -->
     
-    <t>An important recent IPv6 development was that, for host computers
-    on local area networks, the way in which interface identifiers were
-    formed was no longer bound to layer 2 addresses (MACs) <xref
-    target="RFC7217"/> <xref target="RFC8064"/>.  Therefore their
-    length, previously fixed at 64 bits <xref target="RFC7136"/>, is in
-    fact a variably-sized parameter as stated in <xref
-    target="RFC4862"/>.</t>
+    <t>For host computers on local area networks, generation of interface
+    identifiers is no longer necessarily bound to layer 2 addresses (MACs)
+    <xref target="RFC7217"/> <xref target="RFC8064"/>.  Therefore their
+    length, previously fixed at 64 bits <xref target="RFC7136"/>, is in fact
+    a variably-sized parameter as explicitly acknowledged in Section
+    5.5.3(d) of <xref target="RFC4862"/> which states:
 
+      <list><t>
+      Note that a future revision of the address architecture [RFC4291]
+      and a future link-type-specific document, which will still be
+      consistent with each other, could potentially allow for an
+      interface identifier of length other than the value defined in the
+      current documents.  Thus, an implementation should not assume a
+      particular constant.  Rather, it should expect any lengths of
+      interface identifiers.
+      </t></list>
+
+    </t>
     </section>
-
 
   <section anchor="simple" title="A simple Statement">
 
@@ -187,7 +190,7 @@ rate is low enough.
 
   <section anchor="security" title="Security Considerations">
 
-    <t>Assumming that nodes employ unpredictable interface identifiers
+    <t>Assuming that nodes employ unpredictable interface identifiers
     <xref target="RFC7721"/>, the subnet size may have an impact on some
     security and privacy properties of a network.  Namely, the smaller
     the subnet size, the more feasible it becomes to perform IPv6
