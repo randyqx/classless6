@@ -60,6 +60,27 @@
       <email>brian.e.carpenter@gmail.com</email>
       </address>
     </author>
+
+  <author initials="N" surname="Hilliard" fullname="Nick Hilliard">
+    <organization>INEX</organization>
+    <address>
+      <postal>
+        <street>4027 Kingswood Road</street>
+	<city>Dublin</city>
+	<code>24</code>
+	<country>Ireland</country>
+        </postal>
+      <email>nick@inex.ie</email>
+      </address>
+    </author>
+
+  <author fullname=“Geoff Huston" initials=“G" surname=“Huston">
+     <organization abbrev=“APNIC"/>
+     <address>
+       <email>gih@apnic.net</email>
+       </address>
+     </author>
+
 -->
 
   <date month="May" year="2017"/>
