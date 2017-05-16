@@ -16,6 +16,7 @@
 <front>
   <title>IPv6 is Classless</title>
 
+<!--
   <author fullname="Nicolas Bourbaki" initials="N." surname="Bourbaki">
     <organization>The Intertubes</organization>
     <address>
@@ -29,8 +30,8 @@
       <email>bourbaki@bogus.com</email>
       </address>
     </author>
+-->
 
-<!--
   <author fullname="Randy Bush" initials="R.B." surname="Bush">
     <organization>Internet Initiative Japan</organization>
     <address>
@@ -59,6 +60,22 @@
         </postal>
       <email>brian.e.carpenter@gmail.com</email>
       </address>
+  </author>
+
+  <author fullname="Fernando Gont" initials="F." surname="Gont">
+    <organization>SI6 Networks / UTN-FRH</organization>
+    <address>
+      <postal>
+        <street>Evaristo Carriego 2644</street>
+        <code>1706</code>
+        <city>Haedo</city>
+        <region>Provincia de Buenos Aires</region>
+        <country>Argentina</country>
+        </postal>
+      <phone>+54 11 4650 8472</phone>
+      <email>fgont@si6networks.com</email>
+      <uri>http://www.si6networks.com</uri>
+      </address>
     </author>
 
   <author initials="N" surname="Hilliard" fullname="Nick Hilliard">
@@ -74,14 +91,25 @@
       </address>
     </author>
 
-  <author fullname=“Geoff Huston" initials=“G" surname=“Huston">
-     <organization abbrev=“APNIC"/>
-     <address>
-       <email>gih@apnic.net</email>
-       </address>
-     </author>
+  <author fullname="Geoff Huston" initials="G" surname="Huston">
+    <organization abbrev="APNIC"/>
+    <address>
+      <email>gih@apnic.net</email>
+      </address>
+    </author>
 
--->
+  <author fullname="Job Snijders" initials="J." surname="Snijders">
+    <organization abbrev="NTT">NTT Communications</organization>
+    <address>
+      <postal>
+        <street>Theodorus Majofskistraat 100</street>
+        <code>1065 SZ</code>
+        <city>Amsterdam</city>
+        <country>The Netherlands</country>
+      </postal>
+      <email>job@ntt.net</email>
+      </address>
+    </author>
 
   <date month="May" year="2017"/>
 
