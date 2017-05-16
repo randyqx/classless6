@@ -12,6 +12,8 @@ Expires: November 18, 2017                                       F. Gont
                                                                     INEX
                                                                G. Huston
                                                                    APNIC
+                                                               C. Morrow
+                                                                    GOOG
                                                              J. Snijders
                                                                      NTT
                                                             May 17, 2017
@@ -45,10 +47,8 @@ Status of This Memo
 
    This Internet-Draft will expire on November 18, 2017.
 
-Copyright Notice
 
-   Copyright (c) 2017 IETF Trust and the persons identified as the
-   document authors.  All rights reserved.
+
 
 
 
@@ -57,6 +57,11 @@ Bush, et al.            Expires November 18, 2017               [Page 1]
 
 Internet-Draft              IPv6 is Classless                   May 2017
 
+
+Copyright Notice
+
+   Copyright (c) 2017 IETF Trust and the persons identified as the
+   document authors.  All rights reserved.
 
    This document is subject to BCP 78 and the IETF Trust's Legal
    Provisions Relating to IETF Documents
@@ -76,11 +81,9 @@ Table of Contents
    4.  Recommendations . . . . . . . . . . . . . . . . . . . . . . .   4
    5.  Security Considerations . . . . . . . . . . . . . . . . . . .   4
    6.  IANA Considerations . . . . . . . . . . . . . . . . . . . . .   4
-   7.  Authors . . . . . . . . . . . . . . . . . . . . . . . . . . .   4
-   8.  Acknowledgments . . . . . . . . . . . . . . . . . . . . . . .   5
-   9.  References  . . . . . . . . . . . . . . . . . . . . . . . . .   5
-     9.1.  Normative References  . . . . . . . . . . . . . . . . . .   5
-     9.2.  Informative References  . . . . . . . . . . . . . . . . .   5
+   7.  References  . . . . . . . . . . . . . . . . . . . . . . . . .   4
+     7.1.  Normative References  . . . . . . . . . . . . . . . . . .   4
+     7.2.  Informative References  . . . . . . . . . . . . . . . . .   5
    Authors' Addresses  . . . . . . . . . . . . . . . . . . . . . . .   6
 
 1.  Introduction
@@ -102,9 +105,6 @@ Table of Contents
    implementation, which can easily result in serious operational
    problems.
 
-   This document also clarifies that IPv6 routing subnets may be of any
-   length up to 128.
-
 
 
 
@@ -113,6 +113,9 @@ Bush, et al.            Expires November 18, 2017               [Page 2]
 
 Internet-Draft              IPv6 is Classless                   May 2017
 
+
+   This document also clarifies that IPv6 routing subnets may be of any
+   length up to 128.
 
 2.  Suggested Reading
 
@@ -157,9 +160,6 @@ Internet-Draft              IPv6 is Classless                   May 2017
    other standards are in use, because routing could choose to
    differentiate at a different granularity than is used by any such
    automated link local address configuration tools.
-
-
-
 
 
 
@@ -211,12 +211,12 @@ Internet-Draft              IPv6 is Classless                   May 2017
 
    This document has no IANA Considerations.
 
-7.  Authors
+7.  References
 
-   The original sketch was by Randy Bush, who was immediately aided and
-   abetted by Brian Carpenter, Chris Morrow, Fernando Gont, Geoff
-   Huston, Job Snijders, and Nick Hilliard.
+7.1.  Normative References
 
+   [RFC2450]  Hinden, R., "Proposed TLA and NLA Assignment Rules",
+              RFC 2450, December 1998.
 
 
 
@@ -225,17 +225,6 @@ Bush, et al.            Expires November 18, 2017               [Page 4]
 
 Internet-Draft              IPv6 is Classless                   May 2017
 
-
-8.  Acknowledgments
-
-   The authors wish to thank .
-
-9.  References
-
-9.1.  Normative References
-
-   [RFC2450]  Hinden, R., "Proposed TLA and NLA Assignment Rules",
-              RFC 2450, December 1998.
 
    [RFC2460]  Deering, S. and R. Hinden, "Internet Protocol, Version 6
               (IPv6) Specification", RFC 2460, December 1998.
@@ -254,7 +243,7 @@ Internet-Draft              IPv6 is Classless                   May 2017
               RFC 8064, DOI 10.17487/RFC8064, February 2017,
               <http://www.rfc-editor.org/info/rfc8064>.
 
-9.2.  Informative References
+7.2.  Informative References
 
    [I-D.hinden-6man-rfc2464bis]
               Crawford, M. and R. Hinden, "Transmission of IPv6 Packets
@@ -273,15 +262,6 @@ Internet-Draft              IPv6 is Classless                   May 2017
               (CIDR): The Internet Address Assignment and Aggregation
               Plan", BCP 122, RFC 4632, August 2006.
 
-
-
-
-
-Bush, et al.            Expires November 18, 2017               [Page 5]
-
-Internet-Draft              IPv6 is Classless                   May 2017
-
-
    [RFC4862]  Thomson, S., Narten, T., and T. Jinmei, "IPv6 Stateless
               Address Autoconfiguration", RFC 4862, September 2007.
 
@@ -292,6 +272,15 @@ Internet-Draft              IPv6 is Classless                   May 2017
    [RFC7136]  Carpenter, B. and S. Jiang, "Significance of IPv6
               Interface Identifiers", RFC 7136, DOI 10.17487/RFC7136,
               February 2014, <http://www.rfc-editor.org/info/rfc7136>.
+
+
+
+
+
+Bush, et al.            Expires November 18, 2017               [Page 5]
+
+Internet-Draft              IPv6 is Classless                   May 2017
+
 
    [RFC7707]  Gont, F. and T. Chown, "Network Reconnaissance in IPv6
               Networks", RFC 7707, DOI 10.17487/RFC7707, March 2016,
@@ -323,21 +312,6 @@ Authors' Addresses
    Email: brian.e.carpenter@gmail.com
 
 
-
-
-
-
-
-
-
-
-
-
-Bush, et al.            Expires November 18, 2017               [Page 6]
-
-Internet-Draft              IPv6 is Classless                   May 2017
-
-
    Fernando Gont
    SI6 Networks / UTN-FRH
    Evaristo Carriego 2644
@@ -358,9 +332,24 @@ Internet-Draft              IPv6 is Classless                   May 2017
    Email: nick@inex.ie
 
 
+
+Bush, et al.            Expires November 18, 2017               [Page 6]
+
+Internet-Draft              IPv6 is Classless                   May 2017
+
+
    Geoff Huston
 
    Email: gih@apnic.net
+
+
+   Chris Morrow
+   Google, Inc.
+   1600 Ampitheatre Parkway
+   Mountain View, California
+   United States of America
+
+   Email: morrowc@google.com
 
 
    Job Snijders
@@ -370,6 +359,17 @@ Internet-Draft              IPv6 is Classless                   May 2017
    The Netherlands
 
    Email: job@ntt.net
+
+
+
+
+
+
+
+
+
+
+
 
 
 

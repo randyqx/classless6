@@ -98,6 +98,19 @@
       </address>
     </author>
 
+  <author fullname="Chris Morrow" initials="C." surname="Morrow">
+    <organization abbrev="GOOG">Google, Inc.</organization>
+    <address>
+      <postal>
+        <street>1600 Ampitheatre Parkway</street>
+        <city>Mountain View</city>
+	<region>California</region>
+        <country>United States of America</country>
+        </postal>
+      <email>morrowc@google.com</email>
+      </address>
+    </author>
+
   <author fullname="Job Snijders" initials="J." surname="Snijders">
     <organization abbrev="NTT">NTT Communications</organization>
     <address>
@@ -304,19 +317,11 @@ rate is low enough.
 
     </section>
 
-  <section anchor="authors" title="Authors">
-
-    <t>The original sketch was by Randy Bush, who was immediately aided
-    and abetted by Brian Carpenter, Chris Morrow, Fernando Gont, Geoff
-    Huston, Job Snijders, and Nick Hilliard.</t>
-
-    </section>
-
+<!--
   <section anchor="acknowledgments" title="Acknowledgments">
-
     <t>The authors wish to thank .</t>
-
     </section>
+-->
 
   </middle>
 
