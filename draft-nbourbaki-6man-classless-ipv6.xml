@@ -30,6 +30,38 @@
       </address>
     </author>
 
+<!--
+  <author fullname="Randy Bush" initials="R.B." surname="Bush">
+    <organization>Internet Initiative Japan</organization>
+    <address>
+      <postal>
+        <street>5147 Crystal Springs</street>
+        <city>Bainbridge Island</city>
+        <region>Washington</region>
+        <code>98110</code>
+        <country>US</country>
+        </postal>
+      <email>randy@psg.com</email>
+      </address>
+    </author>
+
+  <author fullname="Brian Carpenter" initials="B. E." surname="Carpenter">
+    <organization abbrev="Univ. of Auckland"/>
+    <address>
+      <postal>
+        <street>Department of Computer Science</street>
+        <street>University of Auckland</street>
+        <street>PB 92019</street>
+        <city>Auckland</city>
+        <region/>
+        <code>1142</code>
+        <country>New Zealand</country>
+        </postal>
+      <email>brian.e.carpenter@gmail.com</email>
+      </address>
+    </author>
+-->
+
   <date month="May" year="2017"/>
 
   <abstract>
