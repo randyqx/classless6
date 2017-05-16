@@ -16,15 +16,15 @@
 <front>
   <title>IPv6 is Classless</title>
 
-  <author fullname="Nicolas Bourbaki" initials="N." surname="Bourbaki">
-    <organization>The Intertubes</organization>
+  <author fullname="Randy Bush" initials="R." surname="Bush" role="editor">
+    <organization abbrev="IIJ">Internet Initiative Japan</organization>
     <address>
       <postal>
-        <street>42 Rue du Jour</street>
-        <city>Sophia-Antipolis</city>
-        <region></region>
-        <code>::1</code>
-        <country>FR</country>
+        <street>5147 Crystal Springs</street>
+        <city>Bainbridge Island</city>
+        <region>WA</region>
+        <code>98110</code>
+        <country>US</country>
         </postal>
       <email>bourbaki@bogus.com</email>
       </address>
@@ -253,15 +253,67 @@ rate is low enough.
       as an RFC.</t>
       -->
 
-    </section>
+  </section>
 
-  <section anchor="authors" title="Authors">
+  <section title="Authors">
+	<t>
+        The original sketch was made by the editor, who was immediately aided
+        abetted by the following people:
+	</t>
+	<figure>
+		<artwork>
+Brian Carpenter
 
-    <t>The original sketch was by Randy Bush, who was immediately aided
-    and abetted by Brian Carpenter, Chris Morrow, Fernando Gont, Geoff
-    Huston, Job Snijders, and Nick Hilliard.</t>
+Email: brian.e.carpenter@gmail.com
+</artwork>
+	</figure>
 
-    </section>
+    <figure>
+		<artwork>
+Fernando Gont
+SI6 Networks / UTN-FRH
+
+Email: fgont@si6networks.com
+</artwork>
+	</figure>
+
+    <figure>
+		<artwork>
+Nick Hilliard
+INEX
+
+Email: nick@inex.net
+</artwork>
+	</figure>
+
+    <figure>
+		<artwork>
+Geoff Huston
+APNIC
+
+Email: gih@apnic.net
+</artwork>
+	</figure>
+
+	<figure>
+		<artwork>
+Chris Morrow
+Google
+
+Email: christopher.morrow@gmail.com
+</artwork>
+	</figure>
+
+    <figure>
+		<artwork>
+Job Snijders
+NTT Communications
+
+Email: job@ntt.net
+</artwork>
+	</figure>
+
+  </section>
 
   <section anchor="acknowledgments" title="Acknowledgments">
 
