@@ -81,8 +81,8 @@ Table of Contents
    4.  Recommendations . . . . . . . . . . . . . . . . . . . . . . .   4
    5.  Security Considerations . . . . . . . . . . . . . . . . . . .   4
    6.  IANA Considerations . . . . . . . . . . . . . . . . . . . . .   4
-   7.  References  . . . . . . . . . . . . . . . . . . . . . . . . .   4
-     7.1.  Normative References  . . . . . . . . . . . . . . . . . .   4
+   7.  References  . . . . . . . . . . . . . . . . . . . . . . . . .   5
+     7.1.  Normative References  . . . . . . . . . . . . . . . . . .   5
      7.2.  Informative References  . . . . . . . . . . . . . . . . .   5
    Authors' Addresses  . . . . . . . . . . . . . . . . . . . . . . .   6
 
@@ -132,6 +132,9 @@ Internet-Draft              IPv6 is Classless                   May 2017
    [I-D.hinden-6man-rfc2464bis], and the IETF recommendation for the
    generation of stable Interface Identifiers [RFC8064].
 
+   [I-D.jinmei-6man-prefix-clarify] is also worth reading to clarify
+   uses of varying prefix lengths on a single link.
+
    For host computers on local area networks, generation of interface
    identifiers is no longer necessarily bound to layer 2 addresses
    (MACs) [RFC7217] [RFC8064].  Therefore their length, previously fixed
@@ -158,9 +161,6 @@ Internet-Draft              IPv6 is Classless                   May 2017
    Additionally, this document clarifies that a node or router MUST
    support routing of any valid network prefix length, even if SLAAC or
    other standards are in use, because routing could choose to
-   differentiate at a different granularity than is used by any such
-   automated link local address configuration tools.
-
 
 
 
@@ -169,6 +169,9 @@ Bush, et al.            Expires November 18, 2017               [Page 3]
 
 Internet-Draft              IPv6 is Classless                   May 2017
 
+
+   differentiate at a different granularity than is used by any such
+   automated link local address configuration tools.
 
 4.  Recommendations
 
@@ -211,12 +214,9 @@ Internet-Draft              IPv6 is Classless                   May 2017
 
    This document has no IANA Considerations.
 
-7.  References
 
-7.1.  Normative References
 
-   [RFC2450]  Hinden, R., "Proposed TLA and NLA Assignment Rules",
-              RFC 2450, December 1998.
+
 
 
 
@@ -225,6 +225,13 @@ Bush, et al.            Expires November 18, 2017               [Page 4]
 
 Internet-Draft              IPv6 is Classless                   May 2017
 
+
+7.  References
+
+7.1.  Normative References
+
+   [RFC2450]  Hinden, R., "Proposed TLA and NLA Assignment Rules",
+              RFC 2450, December 1998.
 
    [RFC2460]  Deering, S. and R. Hinden, "Internet Protocol, Version 6
               (IPv6) Specification", RFC 2460, December 1998.
@@ -255,12 +262,25 @@ Internet-Draft              IPv6 is Classless                   May 2017
               Architecture", draft-ietf-6man-rfc4291bis-07 (work in
               progress), January 2017.
 
+   [I-D.jinmei-6man-prefix-clarify]
+              Jinmei, T., "Clarifications on On-link and Subnet IPv6
+              Prefixes", draft-jinmei-6man-prefix-clarify-00 (work in
+              progress), March 2017.
+
    [RFC3587]  Hinden, R., Deering, S., and E. Nordmark, "IPv6 Global
               Unicast Address Format", RFC 3587, August 2003.
 
    [RFC4632]  Fuller, V. and T. Li, "Classless Inter-domain Routing
               (CIDR): The Internet Address Assignment and Aggregation
               Plan", BCP 122, RFC 4632, August 2006.
+
+
+
+
+Bush, et al.            Expires November 18, 2017               [Page 5]
+
+Internet-Draft              IPv6 is Classless                   May 2017
+
 
    [RFC4862]  Thomson, S., Narten, T., and T. Jinmei, "IPv6 Stateless
               Address Autoconfiguration", RFC 4862, September 2007.
@@ -272,15 +292,6 @@ Internet-Draft              IPv6 is Classless                   May 2017
    [RFC7136]  Carpenter, B. and S. Jiang, "Significance of IPv6
               Interface Identifiers", RFC 7136, DOI 10.17487/RFC7136,
               February 2014, <http://www.rfc-editor.org/info/rfc7136>.
-
-
-
-
-
-Bush, et al.            Expires November 18, 2017               [Page 5]
-
-Internet-Draft              IPv6 is Classless                   May 2017
-
 
    [RFC7707]  Gont, F. and T. Chown, "Network Reconnaissance in IPv6
               Networks", RFC 7707, DOI 10.17487/RFC7707, March 2016,
@@ -312,6 +323,21 @@ Authors' Addresses
    Email: brian.e.carpenter@gmail.com
 
 
+
+
+
+
+
+
+
+
+
+
+Bush, et al.            Expires November 18, 2017               [Page 6]
+
+Internet-Draft              IPv6 is Classless                   May 2017
+
+
    Fernando Gont
    SI6 Networks / UTN-FRH
    Evaristo Carriego 2644
@@ -330,12 +356,6 @@ Authors' Addresses
    Ireland
 
    Email: nick@inex.ie
-
-
-
-Bush, et al.            Expires November 18, 2017               [Page 6]
-
-Internet-Draft              IPv6 is Classless                   May 2017
 
 
    Geoff Huston
@@ -359,26 +379,6 @@ Internet-Draft              IPv6 is Classless                   May 2017
    The Netherlands
 
    Email: job@ntt.net
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

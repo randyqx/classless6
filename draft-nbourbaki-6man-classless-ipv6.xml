@@ -194,6 +194,10 @@
     recommendation for the generation of stable Interface Identifiers
     <xref target="RFC8064"/>.</t>
 
+    <t><xref target="I-D.jinmei-6man-prefix-clarify"/> is also worth
+    reading to clarify uses of varying prefix lengths on a single
+    link.</t>
+
 <!--     
     <t>NOTE: do we mean 4291bis (currently moribund) or 2464bis?</t>
 
@@ -348,6 +352,7 @@ rate is low enough.
     <?rfc include="reference.RFC.7721"?>
     <?rfc include="reference.I-D.ietf-6man-rfc4291bis"?>
     <?rfc include="reference.I-D.hinden-6man-rfc2464bis"?>
+    <?rfc include="reference.I-D.jinmei-6man-prefix-clarify"?>
     </references>
 
   </back>
