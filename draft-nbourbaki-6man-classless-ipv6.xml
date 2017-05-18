@@ -189,8 +189,9 @@
     <t>It is also assumed that the reader understands IPv6 <xref
     target="RFC2460"/>, the IP Version 6 Addressing Architecture <xref
     target="RFC4291"/>, the proposed changes to RFC4291 <xref
-    target="I-D.ietf-6man-rfc4291bis"/> and RFC2464
-    <xref target="I-D.hinden-6man-rfc2464bis"/>, and the IETF
+    target="I-D.ietf-6man-rfc4291bis"/> and RFC2464 <xref
+    target="I-D.hinden-6man-rfc2464bis"/>, <xref target="RFC7608"/> an
+    IPv6 Prefix Length Recommendation for Forwarding, and the IETF
     recommendation for the generation of stable Interface Identifiers
     <xref target="RFC8064"/>.</t>
 
@@ -347,6 +348,7 @@ rate is low enough.
     <?rfc include="reference.RFC.6164"?>
     <?rfc include="reference.RFC.3587"?>
     <?rfc include="reference.RFC.4632"?>
+    <?rfc include="reference.RFC.7608"?>
     <?rfc include="reference.RFC.7707"?>
     <?rfc include="reference.RFC.7136"?>
     <?rfc include="reference.RFC.7721"?>
