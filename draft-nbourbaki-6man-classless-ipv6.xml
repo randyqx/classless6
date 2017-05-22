@@ -122,9 +122,12 @@
       </postal>
       <email>job@ntt.net</email>
       </address>
-    </author>
+  </author>
 
-  <date month="May" year="2017"/>
+  <date />
+
+  <area>Internet</area>
+  <workgroup>6man</workgroup>
 
   <abstract>
 
