@@ -2,7 +2,7 @@
 
 
 
-Network Working Group                                            R. Bush
+6man                                                             R. Bush
 Internet-Draft                                 Internet Initiative Japan
 Updates: 4291 (if approved)                                 B. Carpenter
 Intended status: Standards Track                       Univ. of Auckland
@@ -20,7 +20,7 @@ Expires: November 23, 2017                                       F. Gont
 
 
                            IPv6 is Classless
-                 draft-bourbaki-6man-classless-ipv6-00
+                 draft-bourbaki-6man-classless-ipv6-01
 
 Abstract
 
