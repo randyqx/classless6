@@ -6,7 +6,7 @@ Network Working Group                                            R. Bush
 Internet-Draft                                 Internet Initiative Japan
 Updates: 4291 (if approved)                                 B. Carpenter
 Intended status: Standards Track                       Univ. of Auckland
-Expires: November 18, 2017                                       F. Gont
+Expires: November 23, 2017                                       F. Gont
                                                   SI6 Networks / UTN-FRH
                                                              N. Hilliard
                                                                     INEX
@@ -16,7 +16,7 @@ Expires: November 18, 2017                                       F. Gont
                                                                     GOOG
                                                              J. Snijders
                                                                      NTT
-                                                            May 17, 2017
+                                                            May 22, 2017
 
 
                            IPv6 is Classless
@@ -45,7 +45,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on November 18, 2017.
+   This Internet-Draft will expire on November 23, 2017.
 
 
 
@@ -53,7 +53,7 @@ Status of This Memo
 
 
 
-Bush, et al.            Expires November 18, 2017               [Page 1]
+Bush, et al.            Expires November 23, 2017               [Page 1]
 
 Internet-Draft              IPv6 is Classless                   May 2017
 
@@ -109,7 +109,7 @@ Table of Contents
 
 
 
-Bush, et al.            Expires November 18, 2017               [Page 2]
+Bush, et al.            Expires November 23, 2017               [Page 2]
 
 Internet-Draft              IPv6 is Classless                   May 2017
 
@@ -129,7 +129,8 @@ Internet-Draft              IPv6 is Classless                   May 2017
    It is also assumed that the reader understands IPv6 [RFC2460], the IP
    Version 6 Addressing Architecture [RFC4291], the proposed changes to
    RFC4291 [I-D.ietf-6man-rfc4291bis] and RFC2464
-   [I-D.hinden-6man-rfc2464bis], and the IETF recommendation for the
+   [I-D.hinden-6man-rfc2464bis], [RFC7608] an IPv6 Prefix Length
+   Recommendation for Forwarding, and the IETF recommendation for the
    generation of stable Interface Identifiers [RFC8064].
 
    [I-D.jinmei-6man-prefix-clarify] is also worth reading to clarify
@@ -164,8 +165,7 @@ Internet-Draft              IPv6 is Classless                   May 2017
 
 
 
-
-Bush, et al.            Expires November 18, 2017               [Page 3]
+Bush, et al.            Expires November 23, 2017               [Page 3]
 
 Internet-Draft              IPv6 is Classless                   May 2017
 
@@ -221,7 +221,7 @@ Internet-Draft              IPv6 is Classless                   May 2017
 
 
 
-Bush, et al.            Expires November 18, 2017               [Page 4]
+Bush, et al.            Expires November 23, 2017               [Page 4]
 
 Internet-Draft              IPv6 is Classless                   May 2017
 
@@ -277,7 +277,7 @@ Internet-Draft              IPv6 is Classless                   May 2017
 
 
 
-Bush, et al.            Expires November 18, 2017               [Page 5]
+Bush, et al.            Expires November 23, 2017               [Page 5]
 
 Internet-Draft              IPv6 is Classless                   May 2017
 
@@ -292,6 +292,11 @@ Internet-Draft              IPv6 is Classless                   May 2017
    [RFC7136]  Carpenter, B. and S. Jiang, "Significance of IPv6
               Interface Identifiers", RFC 7136, DOI 10.17487/RFC7136,
               February 2014, <http://www.rfc-editor.org/info/rfc7136>.
+
+   [RFC7608]  Boucadair, M., Petrescu, A., and F. Baker, "IPv6 Prefix
+              Length Recommendation for Forwarding", BCP 198, RFC 7608,
+              DOI 10.17487/RFC7608, July 2015,
+              <http://www.rfc-editor.org/info/rfc7608>.
 
    [RFC7707]  Gont, F. and T. Chown, "Network Reconnaissance in IPv6
               Networks", RFC 7707, DOI 10.17487/RFC7707, March 2016,
@@ -328,12 +333,7 @@ Authors' Addresses
 
 
 
-
-
-
-
-
-Bush, et al.            Expires November 18, 2017               [Page 6]
+Bush, et al.            Expires November 23, 2017               [Page 6]
 
 Internet-Draft              IPv6 is Classless                   May 2017
 
@@ -389,4 +389,4 @@ Internet-Draft              IPv6 is Classless                   May 2017
 
 
 
-Bush, et al.            Expires November 18, 2017               [Page 7]
+Bush, et al.            Expires November 23, 2017               [Page 7]
