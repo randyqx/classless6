@@ -339,7 +339,6 @@ rate is low enough.
   <!--
     <?rfc include="reference.RFC.2119"?>
   -->
-    <?rfc include="reference.RFC.2450"?>
     <?rfc include="reference.RFC.2460"?>
     <?rfc include="reference.RFC.4291"?>
     <?rfc include="reference.RFC.7217"?>
@@ -347,6 +346,7 @@ rate is low enough.
     </references>
 
   <references title="Informative References">
+    <?rfc include="reference.RFC.2450"?>
     <?rfc include="reference.RFC.4862"?>
     <?rfc include="reference.RFC.6164"?>
     <?rfc include="reference.RFC.3587"?>
