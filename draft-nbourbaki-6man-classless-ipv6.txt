@@ -124,6 +124,8 @@ Internet-Draft              IPv6 is Classless                  July 2017
    [I-D.jinmei-6man-prefix-clarify] is also worth reading to clarify
    uses of varying prefix lengths on a single link.
 
+3.  Problem reinforced by classful addressing
+
    For host computers on local area networks, generation of interface
    identifiers is no longer necessarily bound to layer 2 addresses
    (MACs) [RFC7217] [RFC8064].  Therefore their length, previously fixed
@@ -138,8 +140,6 @@ Internet-Draft              IPv6 is Classless                  July 2017
       current documents.  Thus, an implementation should not assume a
       particular constant.  Rather, it should expect any lengths of
       interface identifiers.
-
-3.  Problem reinforced by classful addressing
 
    As IPv6 usage has evolved and grown over in recent years, it has
    become evident that it faces several scaling and coordination
