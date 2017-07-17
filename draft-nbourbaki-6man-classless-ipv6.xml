@@ -255,7 +255,7 @@ rate is low enough.
    Hierarchical allocation of fixed-length subnets requires coordination
    between lower / intermediate / upper network elements and has implict
    assumption that policies and size allocation at the top of the hierarchy
-   will accomidate all use cases with fixed lenth subnet allocation.
+   will accommodate all use cases with fixed length subnet allocation.
 </t>
 <t>
    Coordination with upstream network elements for the allocation of
