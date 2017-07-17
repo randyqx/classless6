@@ -2,21 +2,11 @@
 
 
 
-6man                                                             R. Bush
-Internet-Draft                                 Internet Initiative Japan
-Updates: 4291 (if approved)                                 B. Carpenter
-Intended status: Standards Track                       Univ. of Auckland
-Expires: November 24, 2017                                       F. Gont
-                                                  SI6 Networks / UTN-FRH
-                                                             N. Hilliard
-                                                                    INEX
-                                                               G. Huston
-                                                                   APNIC
-                                                               C. Morrow
-                                                                    GOOG
-                                                             J. Snijders
-                                                                     NTT
-                                                            May 23, 2017
+6man                                                         N. Bourbaki
+Internet-Draft                                            The Intertubes
+Updates: 4291 (if approved)                                July 17, 2017
+Intended status: Standards Track
+Expires: January 18, 2018
 
 
                            IPv6 is Classless
@@ -45,18 +35,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on November 24, 2017.
-
-
-
-
-
-
-
-Bush, et al.            Expires November 24, 2017               [Page 1]
-
-Internet-Draft              IPv6 is Classless                   May 2017
-
+   This Internet-Draft will expire on January 18, 2018.
 
 Copyright Notice
 
@@ -70,21 +49,32 @@ Copyright Notice
    carefully, as they describe your rights and restrictions with respect
    to this document.  Code Components extracted from this document must
    include Simplified BSD License text as described in Section 4.e of
+
+
+
+
+Bourbaki                Expires January 18, 2018                [Page 1]
+
+Internet-Draft              IPv6 is Classless                  July 2017
+
+
    the Trust Legal Provisions and are provided without warranty as
    described in the Simplified BSD License.
 
 Table of Contents
 
    1.  Introduction  . . . . . . . . . . . . . . . . . . . . . . . .   2
-   2.  Suggested Reading . . . . . . . . . . . . . . . . . . . . . .   3
-   3.  Identifier and Subnet Length Statements . . . . . . . . . . .   3
-   4.  Recommendations . . . . . . . . . . . . . . . . . . . . . . .   4
-   5.  Security Considerations . . . . . . . . . . . . . . . . . . .   4
-   6.  IANA Considerations . . . . . . . . . . . . . . . . . . . . .   4
-   7.  References  . . . . . . . . . . . . . . . . . . . . . . . . .   5
-     7.1.  Normative References  . . . . . . . . . . . . . . . . . .   5
-     7.2.  Informative References  . . . . . . . . . . . . . . . . .   5
-   Authors' Addresses  . . . . . . . . . . . . . . . . . . . . . . .   6
+   2.  Suggested Reading . . . . . . . . . . . . . . . . . . . . . .   2
+   3.  Problem reinforced by classful addressing . . . . . . . . . .   3
+   4.  Identifier and Subnet Length Statements . . . . . . . . . . .   4
+   5.  Recommendations . . . . . . . . . . . . . . . . . . . . . . .   4
+   6.  Security Considerations . . . . . . . . . . . . . . . . . . .   4
+   7.  IANA Considerations . . . . . . . . . . . . . . . . . . . . .   5
+   8.  Authors . . . . . . . . . . . . . . . . . . . . . . . . . . .   5
+   9.  References  . . . . . . . . . . . . . . . . . . . . . . . . .   5
+     9.1.  Normative References  . . . . . . . . . . . . . . . . . .   5
+     9.2.  Informative References  . . . . . . . . . . . . . . . . .   5
+   Author's Address  . . . . . . . . . . . . . . . . . . . . . . . .   7
 
 1.  Introduction
 
@@ -105,15 +95,6 @@ Table of Contents
    implementation, which can easily result in serious operational
    problems.
 
-
-
-
-
-Bush, et al.            Expires November 24, 2017               [Page 2]
-
-Internet-Draft              IPv6 is Classless                   May 2017
-
-
    This document also clarifies that IPv6 routing subnets may be of any
    length up to 128.
 
@@ -125,6 +106,13 @@ Internet-Draft              IPv6 is Classless                   May 2017
    classless addressing for IPv4 does not apply to IPv6, but the
    arguments for operational flexibility in address assignment remain
    compelling.
+
+
+
+Bourbaki                Expires January 18, 2018                [Page 2]
+
+Internet-Draft              IPv6 is Classless                  July 2017
+
 
    It is also assumed that the reader understands IPv6 [RFC2460], the IP
    Version 6 Addressing Architecture [RFC4291], the proposed changes to
@@ -151,7 +139,38 @@ Internet-Draft              IPv6 is Classless                   May 2017
       particular constant.  Rather, it should expect any lengths of
       interface identifiers.
 
-3.  Identifier and Subnet Length Statements
+3.  Problem reinforced by classful addressing
+
+   As IPv6 usage has evolved and grown over in recent years, it has
+   become evident that it faces several scaling and coordination
+   problems.  These problems are analogous to allocation and
+   coordination problems that motivated IPv4 CIDR allocation and later
+   abundant IPv4 PAT, they include:
+
+      Address allocation models for specific counts of fixed length
+      subnets to downstream networks or devices from /48 down to /64 are
+      based on our imagination of how subnets are or should be allocated
+      within ipv4 networks.
+      Hierarchical allocation of fixed-length subnets requires
+      coordination between lower / intermediate / upper network elements
+      and has implict assumption that policies and size allocation at
+      the top of the hierarchy will accomidate all use cases with fixed
+      lenth subnet allocation.
+      Coordination with upstream network elements for the allocation of
+      fixed length subnets reveals topology and intent that may be
+      private in scope and which amounts to permission to build a
+      particular topology.
+
+
+
+
+
+Bourbaki                Expires January 18, 2018                [Page 3]
+
+Internet-Draft              IPv6 is Classless                  July 2017
+
+
+4.  Identifier and Subnet Length Statements
 
    IPv6 unicast interfaces may use any subnet length up to 128 except
    for situations where an Internet Standard document may impose a
@@ -162,18 +181,10 @@ Internet-Draft              IPv6 is Classless                   May 2017
    Additionally, this document clarifies that a node or router MUST
    support routing of any valid network prefix length, even if SLAAC or
    other standards are in use, because routing could choose to
-
-
-
-Bush, et al.            Expires November 24, 2017               [Page 3]
-
-Internet-Draft              IPv6 is Classless                   May 2017
-
-
    differentiate at a different granularity than is used by any such
    automated link local address configuration tools.
 
-4.  Recommendations
+5.  Recommendations
 
    For historical reasons, when a prefix is needed on a link, barring
    other considerations, a /64 is recommended [RFC7136].
@@ -194,7 +205,7 @@ Internet-Draft              IPv6 is Classless                   May 2017
    recommended (see [RFC8064]) algorithm for selecting stable interface
    identifiers [RFC7217] is a parameter, rather than a hardcoded value.
 
-5.  Security Considerations
+6.  Security Considerations
 
    Assuming that nodes employ unpredictable interface identifiers
    [RFC7721], the subnet size may have an impact on some security and
@@ -207,34 +218,44 @@ Internet-Draft              IPv6 is Classless                   May 2017
    fail to enforce limits on the size of some of the data structures
    they employ for communicating with neighboring nodes, such as the
    Neighbor Cache.  In such cases, the use of smaller subnets forces an
+
+
+
+Bourbaki                Expires January 18, 2018                [Page 4]
+
+Internet-Draft              IPv6 is Classless                  July 2017
+
+
    operational limit on such data structures, thus helping mitigate some
    pathological behaviors (such as Neighbor Cache Exhaustion attacks).
 
-6.  IANA Considerations
+7.  IANA Considerations
 
    This document has no IANA Considerations.
 
+8.  Authors
 
+   The authors of this document are as follows:
 
+      Randy Bush, Internet Initiative Japan
+      Brian Carpenter, University of Auckland
+      Fernando Gont, SI6 Networks / UTN-FRH
+      Nick Hilliard, INEX
+      Geoff Huston, APNIC
+      Chris Morrow, Google, Inc.
+      Job Snijders, NTT Communications
 
+9.  References
 
-
-
-
-Bush, et al.            Expires November 24, 2017               [Page 4]
-
-Internet-Draft              IPv6 is Classless                   May 2017
-
-
-7.  References
-
-7.1.  Normative References
+9.1.  Normative References
 
    [RFC2460]  Deering, S. and R. Hinden, "Internet Protocol, Version 6
-              (IPv6) Specification", RFC 2460, December 1998.
+              (IPv6) Specification", RFC 2460, DOI 10.17487/RFC2460,
+              December 1998, <http://www.rfc-editor.org/info/rfc2460>.
 
    [RFC4291]  Hinden, R. and S. Deering, "IP Version 6 Addressing
-              Architecture", RFC 4291, February 2006.
+              Architecture", RFC 4291, DOI 10.17487/RFC4291, February
+              2006, <http://www.rfc-editor.org/info/rfc4291>.
 
    [RFC7217]  Gont, F., "A Method for Generating Semantically Opaque
               Interface Identifiers with IPv6 Stateless Address
@@ -247,47 +268,52 @@ Internet-Draft              IPv6 is Classless                   May 2017
               RFC 8064, DOI 10.17487/RFC8064, February 2017,
               <http://www.rfc-editor.org/info/rfc8064>.
 
-7.2.  Informative References
+9.2.  Informative References
 
    [I-D.hinden-6man-rfc2464bis]
               Crawford, M. and R. Hinden, "Transmission of IPv6 Packets
               over Ethernet Networks", draft-hinden-6man-rfc2464bis-02
               (work in progress), March 2017.
 
+
+
+Bourbaki                Expires January 18, 2018                [Page 5]
+
+Internet-Draft              IPv6 is Classless                  July 2017
+
+
    [I-D.ietf-6man-rfc4291bis]
-              Hinden, R. and S. <>, "IP Version 6 Addressing
-              Architecture", draft-ietf-6man-rfc4291bis-07 (work in
-              progress), January 2017.
+              Hinden, R. and S. Deering, "IP Version 6 Addressing
+              Architecture", draft-ietf-6man-rfc4291bis-09 (work in
+              progress), July 2017.
 
    [I-D.jinmei-6man-prefix-clarify]
               Jinmei, T., "Clarifications on On-link and Subnet IPv6
               Prefixes", draft-jinmei-6man-prefix-clarify-00 (work in
               progress), March 2017.
 
-   [RFC2450]  Hinden, R., "Proposed TLA and NLA Assignment Rules",
-              RFC 2450, December 1998.
+   [RFC2450]  Hinden, R., "Proposed TLA and NLA Assignment Rule",
+              RFC 2450, DOI 10.17487/RFC2450, December 1998,
+              <http://www.rfc-editor.org/info/rfc2450>.
 
    [RFC3587]  Hinden, R., Deering, S., and E. Nordmark, "IPv6 Global
-              Unicast Address Format", RFC 3587, August 2003.
+              Unicast Address Format", RFC 3587, DOI 10.17487/RFC3587,
+              August 2003, <http://www.rfc-editor.org/info/rfc3587>.
 
    [RFC4632]  Fuller, V. and T. Li, "Classless Inter-domain Routing
               (CIDR): The Internet Address Assignment and Aggregation
-              Plan", BCP 122, RFC 4632, August 2006.
-
-
-
-
-Bush, et al.            Expires November 24, 2017               [Page 5]
-
-Internet-Draft              IPv6 is Classless                   May 2017
-
+              Plan", BCP 122, RFC 4632, DOI 10.17487/RFC4632, August
+              2006, <http://www.rfc-editor.org/info/rfc4632>.
 
    [RFC4862]  Thomson, S., Narten, T., and T. Jinmei, "IPv6 Stateless
-              Address Autoconfiguration", RFC 4862, September 2007.
+              Address Autoconfiguration", RFC 4862,
+              DOI 10.17487/RFC4862, September 2007,
+              <http://www.rfc-editor.org/info/rfc4862>.
 
    [RFC6164]  Kohno, M., Nitzan, B., Bush, R., Matsuzaki, Y., Colitti,
               L., and T. Narten, "Using 127-Bit IPv6 Prefixes on Inter-
-              Router Links", RFC 6164, April 2011.
+              Router Links", RFC 6164, DOI 10.17487/RFC6164, April 2011,
+              <http://www.rfc-editor.org/info/rfc6164>.
 
    [RFC7136]  Carpenter, B. and S. Jiang, "Significance of IPv6
               Interface Identifiers", RFC 7136, DOI 10.17487/RFC7136,
@@ -302,83 +328,30 @@ Internet-Draft              IPv6 is Classless                   May 2017
               Networks", RFC 7707, DOI 10.17487/RFC7707, March 2016,
               <http://www.rfc-editor.org/info/rfc7707>.
 
+
+
+
+
+
+Bourbaki                Expires January 18, 2018                [Page 6]
+
+Internet-Draft              IPv6 is Classless                  July 2017
+
+
    [RFC7721]  Cooper, A., Gont, F., and D. Thaler, "Security and Privacy
               Considerations for IPv6 Address Generation Mechanisms",
               RFC 7721, DOI 10.17487/RFC7721, March 2016,
               <http://www.rfc-editor.org/info/rfc7721>.
 
-Authors' Addresses
+Author's Address
 
-   Randy Bush
-   Internet Initiative Japan
-   5147 Crystal Springs
-   Bainbridge Island, Washington  98110
-   US
+   Nicolas Bourbaki
+   The Intertubes
+   42 Rue du Jour
+   Sophia-Antipolis  ::1
+   FR
 
-   Email: randy@psg.com
-
-
-   Brian Carpenter
-   Department of Computer Science
-   University of Auckland
-   PB 92019
-   Auckland  1142
-   New Zealand
-
-   Email: brian.e.carpenter@gmail.com
-
-
-
-
-
-
-
-Bush, et al.            Expires November 24, 2017               [Page 6]
-
-Internet-Draft              IPv6 is Classless                   May 2017
-
-
-   Fernando Gont
-   SI6 Networks / UTN-FRH
-   Evaristo Carriego 2644
-   Haedo, Provincia de Buenos Aires  1706
-   Argentina
-
-   Phone: +54 11 4650 8472
-   Email: fgont@si6networks.com
-   URI:   http://www.si6networks.com
-
-
-   Nick Hilliard
-   INEX
-   4027 Kingswood Road
-   Dublin  24
-   Ireland
-
-   Email: nick@inex.ie
-
-
-   Geoff Huston
-
-   Email: gih@apnic.net
-
-
-   Chris Morrow
-   Google, Inc.
-   1600 Ampitheatre Parkway
-   Mountain View, California
-   United States of America
-
-   Email: morrowc@google.com
-
-
-   Job Snijders
-   NTT Communications
-   Theodorus Majofskistraat 100
-   Amsterdam  1065 SZ
-   The Netherlands
-
-   Email: job@ntt.net
+   Email: bourbaki@bogus.com
 
 
 
@@ -389,4 +362,31 @@ Internet-Draft              IPv6 is Classless                   May 2017
 
 
 
-Bush, et al.            Expires November 24, 2017               [Page 7]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Bourbaki                Expires January 18, 2018                [Page 7]
