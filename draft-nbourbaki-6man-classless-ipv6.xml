@@ -196,7 +196,6 @@ rate is low enough.
                compatibility) or e.g. when /127 (or the like) prefixes
                are employed for point to point links.
 -->
-    </section>
 
   <section anchor="notes" title="Recommendations">
 
