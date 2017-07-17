@@ -241,6 +241,7 @@ Internet-Draft              IPv6 is Classless                  July 2017
       Brian Carpenter, University of Auckland
       Fernando Gont, SI6 Networks / UTN-FRH
       Nick Hilliard, INEX
+      Joel Jaeggli, Fastly
       Geoff Huston, APNIC
       Chris Morrow, Google, Inc.
       Job Snijders, NTT Communications
@@ -270,10 +271,9 @@ Internet-Draft              IPv6 is Classless                  July 2017
 
 9.2.  Informative References
 
-   [I-D.hinden-6man-rfc2464bis]
-              Crawford, M. and R. Hinden, "Transmission of IPv6 Packets
-              over Ethernet Networks", draft-hinden-6man-rfc2464bis-02
-              (work in progress), March 2017.
+
+
+
 
 
 
@@ -281,6 +281,11 @@ Bourbaki                Expires January 18, 2018                [Page 5]
 
 Internet-Draft              IPv6 is Classless                  July 2017
 
+
+   [I-D.hinden-6man-rfc2464bis]
+              Crawford, M. and R. Hinden, "Transmission of IPv6 Packets
+              over Ethernet Networks", draft-hinden-6man-rfc2464bis-02
+              (work in progress), March 2017.
 
    [I-D.ietf-6man-rfc4291bis]
               Hinden, R. and S. Deering, "IP Version 6 Addressing
@@ -324,11 +329,6 @@ Internet-Draft              IPv6 is Classless                  July 2017
               DOI 10.17487/RFC7608, July 2015,
               <http://www.rfc-editor.org/info/rfc7608>.
 
-   [RFC7707]  Gont, F. and T. Chown, "Network Reconnaissance in IPv6
-              Networks", RFC 7707, DOI 10.17487/RFC7707, March 2016,
-              <http://www.rfc-editor.org/info/rfc7707>.
-
-
 
 
 
@@ -337,6 +337,10 @@ Bourbaki                Expires January 18, 2018                [Page 6]
 
 Internet-Draft              IPv6 is Classless                  July 2017
 
+
+   [RFC7707]  Gont, F. and T. Chown, "Network Reconnaissance in IPv6
+              Networks", RFC 7707, DOI 10.17487/RFC7707, March 2016,
+              <http://www.rfc-editor.org/info/rfc7707>.
 
    [RFC7721]  Cooper, A., Gont, F., and D. Thaler, "Security and Privacy
               Considerations for IPv6 Address Generation Mechanisms",
@@ -352,10 +356,6 @@ Author's Address
    FR
 
    Email: bourbaki@bogus.com
-
-
-
-
 
 
 
