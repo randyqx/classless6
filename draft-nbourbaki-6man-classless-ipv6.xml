@@ -235,6 +235,36 @@ rate is low enough.
     </t>
     </section>
 
+<section anchor="Problem" title="Problem reinforced by classful addressing"> 
+<t>
+   As IPv6 usage has evolved and grown over in recent years, it has
+   become evident that it faces several scaling and coordination problems. 
+   These problems are analogous to allocation and coordination problems 
+   that motivated IPv4 CIDR allocation and later abundant IPv4 PAT, they 
+   include:
+</t>
+
+<list>
+<t>
+    Address allocation models for specific counts of fixed length subnets
+    to downstream networks or devices  from /48 down to /64 are based
+    on our imagination of how subnets are or should be allocated within
+    ipv4 networks.
+</t>
+<t>
+   Hierarchical allocation of fixed-length subnets requires coordination
+   between lower / intermediate / upper network elements and has implict
+   assumption that policies and size allocation at the top of the hierarchy
+   will accomidate all use cases with fixed lenth subnet allocation.
+</t>
+<t>
+   Coordination with upstream network elements for the allocation of
+   fixed length subnets reveals topology and intent that may be private
+   in scope and which amounts to permission to build a particular topology.
+</t>
+</list>
+</section>
+
   <section anchor="statement" title="Identifier and Subnet Length Statements">
 
     <t>IPv6 unicast interfaces may use any subnet length up to 128 except
