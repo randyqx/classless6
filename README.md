@@ -1,3 +1,3 @@
 # classless6
 
-## draft-nbourbaki-6man-classless-ipv6
+## draft-bourbaki-6man-classless-ipv6
