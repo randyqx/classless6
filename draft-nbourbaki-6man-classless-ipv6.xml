@@ -16,7 +16,6 @@
 <front>
   <title>IPv6 is Classless</title>
 
-<!--
   <author fullname="Nicolas Bourbaki" initials="N." surname="Bourbaki">
     <organization>The Intertubes</organization>
     <address>
@@ -30,99 +29,6 @@
       <email>bourbaki@bogus.com</email>
       </address>
     </author>
--->
-
-  <author fullname="Randy Bush" initials="R.B." surname="Bush">
-    <organization>Internet Initiative Japan</organization>
-    <address>
-      <postal>
-        <street>5147 Crystal Springs</street>
-        <city>Bainbridge Island</city>
-        <region>Washington</region>
-        <code>98110</code>
-        <country>US</country>
-        </postal>
-      <email>randy@psg.com</email>
-      </address>
-    </author>
-
-  <author fullname="Brian Carpenter" initials="B. E." surname="Carpenter">
-    <organization abbrev="Univ. of Auckland"/>
-    <address>
-      <postal>
-        <street>Department of Computer Science</street>
-        <street>University of Auckland</street>
-        <street>PB 92019</street>
-        <city>Auckland</city>
-        <region/>
-        <code>1142</code>
-        <country>New Zealand</country>
-        </postal>
-      <email>brian.e.carpenter@gmail.com</email>
-      </address>
-  </author>
-
-  <author fullname="Fernando Gont" initials="F." surname="Gont">
-    <organization>SI6 Networks / UTN-FRH</organization>
-    <address>
-      <postal>
-        <street>Evaristo Carriego 2644</street>
-        <code>1706</code>
-        <city>Haedo</city>
-        <region>Provincia de Buenos Aires</region>
-        <country>Argentina</country>
-        </postal>
-      <phone>+54 11 4650 8472</phone>
-      <email>fgont@si6networks.com</email>
-      <uri>http://www.si6networks.com</uri>
-      </address>
-    </author>
-
-  <author initials="N" surname="Hilliard" fullname="Nick Hilliard">
-    <organization>INEX</organization>
-    <address>
-      <postal>
-        <street>4027 Kingswood Road</street>
-	<city>Dublin</city>
-	<code>24</code>
-	<country>Ireland</country>
-        </postal>
-      <email>nick@inex.ie</email>
-      </address>
-    </author>
-
-  <author fullname="Geoff Huston" initials="G" surname="Huston">
-    <organization abbrev="APNIC"/>
-    <address>
-      <email>gih@apnic.net</email>
-      </address>
-    </author>
-
-  <author fullname="Chris Morrow" initials="C." surname="Morrow">
-    <organization abbrev="GOOG">Google, Inc.</organization>
-    <address>
-      <postal>
-        <street>1600 Ampitheatre Parkway</street>
-        <city>Mountain View</city>
-	<region>California</region>
-        <country>United States of America</country>
-        </postal>
-      <email>morrowc@google.com</email>
-      </address>
-    </author>
-
-  <author fullname="Job Snijders" initials="J." surname="Snijders">
-    <organization abbrev="NTT">NTT Communications</organization>
-    <address>
-      <postal>
-        <street>Theodorus Majofskistraat 100</street>
-        <code>1065 SZ</code>
-        <city>Amsterdam</city>
-        <country>The Netherlands</country>
-      </postal>
-      <email>job@ntt.net</email>
-      </address>
-  </author>
 
   <date />
 
@@ -221,51 +127,44 @@ rate is low enough.
     length, previously fixed at 64 bits <xref target="RFC7136"/>, is in fact
     a variably-sized parameter as explicitly acknowledged in Section
     5.5.3(d) of <xref target="RFC4862"/> which states:
-
-      <list><t>
-      Note that a future revision of the address architecture [RFC4291]
-      and a future link-type-specific document, which will still be
-      consistent with each other, could potentially allow for an
-      interface identifier of length other than the value defined in the
-      current documents.  Thus, an implementation should not assume a
-      particular constant.  Rather, it should expect any lengths of
-      interface identifiers.
-      </t></list>
-
+    <list>
+      <t>Note that a future revision of the address architecture
+      [RFC4291] and a future link-type-specific document, which will
+      still be consistent with each other, could potentially allow for
+      an interface identifier of length other than the value defined in
+      the current documents.  Thus, an implementation should not assume
+      a particular constant.  Rather, it should expect any lengths of
+      interface identifiers.</t>
+      </list>
     </t>
-    </section>
+  </section>
 
 <section anchor="Problem" title="Problem reinforced by classful addressing"> 
-<t>
-   As IPv6 usage has evolved and grown over in recent years, it has
-   become evident that it faces several scaling and coordination problems. 
-   These problems are analogous to allocation and coordination problems 
-   that motivated IPv4 CIDR allocation and later abundant IPv4 PAT, they 
-   include:
-</t>
 
-<list>
-<t>
-    Address allocation models for specific counts of fixed length subnets
-    to downstream networks or devices  from /48 down to /64 are based
-    on our imagination of how subnets are or should be allocated within
-    ipv4 networks.
-</t>
-<t>
-   Hierarchical allocation of fixed-length subnets requires coordination
-   between lower / intermediate / upper network elements and has implict
-   assumption that policies and size allocation at the top of the hierarchy
-   will accomidate all use cases with fixed lenth subnet allocation.
-</t>
-<t>
-   Coordination with upstream network elements for the allocation of
-   fixed length subnets reveals topology and intent that may be private
-   in scope and which amounts to permission to build a particular topology.
-</t>
-</list>
-</section>
+  <t>As IPv6 usage has evolved and grown over in recent years, it has
+  become evident that it faces several scaling and coordination
+  problems.  These problems are analogous to allocation and coordination
+  problems that motivated IPv4 CIDR allocation and later abundant IPv4
+  PAT, they include:
+  <list>
+      <t>Address allocation models for specific counts of fixed length
+      subnets to downstream networks or devices from /48 down to /64 are
+      based on our imagination of how subnets are or should be allocated
+      within ipv4 networks.</t>
+      <t>Hierarchical allocation of fixed-length subnets requires
+      coordination between lower / intermediate / upper network elements
+      and has implict assumption that policies and size allocation at the
+      top of the hierarchy will accomidate all use cases with fixed lenth
+      subnet allocation.</t>
+      <t>Coordination with upstream network elements for the allocation of
+      fixed length subnets reveals topology and intent that may be private
+      in scope and which amounts to permission to build a particular
+      topology.</t>
+      </list>
+    </t>
+  </section>
 
-  <section anchor="statement" title="Identifier and Subnet Length Statements">
+<section anchor="statement" title="Identifier and Subnet Length Statements">
 
     <t>IPv6 unicast interfaces may use any subnet length up to 128 except
     for situations where an Internet Standard document may impose a
@@ -355,11 +254,20 @@ rate is low enough.
 
     </section>
 
-<!--
-  <section anchor="acknowledgments" title="Acknowledgments">
-    <t>The authors wish to thank .</t>
+  <section anchor="authors" title="Authors">
+    <t>The authors of this document are as follows:
+      <list>
+        <t> Randy Bush, Internet Initiative Japan</t>
+        <t> Brian Carpenter, University of Auckland</t>
+	<t> Fernando Gont, SI6 Networks / UTN-FRH</t>
+  	<t> Nick Hilliard, INEX</t>
+	<t> Geoff Huston, APNIC</t>
+	<t> Chris Morrow, Google, Inc.</t>
+  	<t> Job Snijders, NTT Communications</t>
+      </list>
+    </t>
+
     </section>
--->
 
   </middle>
 
