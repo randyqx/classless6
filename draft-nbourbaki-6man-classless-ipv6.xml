@@ -121,25 +121,26 @@ backward compatibility. (*)
 rate is low enough. 
 -->
 
-    <t>For host computers on local area networks, generation of interface
-    identifiers is no longer necessarily bound to layer 2 addresses (MACs)
-    <xref target="RFC7217"/> <xref target="RFC8064"/>.  Therefore their
-    length, previously fixed at 64 bits <xref target="RFC7136"/>, is in fact
-    a variably-sized parameter as explicitly acknowledged in Section
-    5.5.3(d) of <xref target="RFC4862"/> which states:
-    <list>
-      <t>Note that a future revision of the address architecture
-      [RFC4291] and a future link-type-specific document, which will
-      still be consistent with each other, could potentially allow for
-      an interface identifier of length other than the value defined in
-      the current documents.  Thus, an implementation should not assume
-      a particular constant.  Rather, it should expect any lengths of
-      interface identifiers.</t>
-      </list>
-    </t>
   </section>
 
 <section anchor="Problem" title="Problem reinforced by classful addressing"> 
+
+  <t>For host computers on local area networks, generation of interface
+  identifiers is no longer necessarily bound to layer 2 addresses (MACs)
+  <xref target="RFC7217"/> <xref target="RFC8064"/>.  Therefore their
+  length, previously fixed at 64 bits <xref target="RFC7136"/>, is in fact
+  a variably-sized parameter as explicitly acknowledged in Section
+  5.5.3(d) of <xref target="RFC4862"/> which states:
+  <list>
+    <t>Note that a future revision of the address architecture
+    [RFC4291] and a future link-type-specific document, which will
+    still be consistent with each other, could potentially allow for
+    an interface identifier of length other than the value defined in
+    the current documents.  Thus, an implementation should not assume
+    a particular constant.  Rather, it should expect any lengths of
+    interface identifiers.</t>
+    </list>
+  </t>
 
   <t>As IPv6 usage has evolved and grown over in recent years, it has
   become evident that it faces several scaling and coordination
@@ -165,7 +166,7 @@ rate is low enough.
   </section>
 
 <section anchor="statement" title="Identifier and Subnet Length Statements">
-
+ 
     <t>IPv6 unicast interfaces may use any subnet length up to 128 except
     for situations where an Internet Standard document may impose a
     particular length, for example Stateless Address Autoconfiguration
@@ -177,6 +178,8 @@ rate is low enough.
     other standards are in use, because routing could choose to
     differentiate at a different granularity than is used by any such
     automated link local address configuration tools.</t>
+
+  </section>
 
 <!-- [fgont] I think these section is mixing up to things:
 
