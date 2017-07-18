@@ -4,9 +4,9 @@
 
 6man                                                         N. Bourbaki
 Internet-Draft                                            The Intertubes
-Updates: 4291 (if approved)                                July 17, 2017
+Updates: 4291 (if approved)                                July 18, 2017
 Intended status: Standards Track
-Expires: January 18, 2018
+Expires: January 19, 2018
 
 
                            IPv6 is Classless
@@ -35,7 +35,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on January 18, 2018.
+   This Internet-Draft will expire on January 19, 2018.
 
 Copyright Notice
 
@@ -53,7 +53,7 @@ Copyright Notice
 
 
 
-Bourbaki                Expires January 18, 2018                [Page 1]
+Bourbaki                Expires January 19, 2018                [Page 1]
 
 Internet-Draft              IPv6 is Classless                  July 2017
 
@@ -109,7 +109,7 @@ Table of Contents
 
 
 
-Bourbaki                Expires January 18, 2018                [Page 2]
+Bourbaki                Expires January 19, 2018                [Page 2]
 
 Internet-Draft              IPv6 is Classless                  July 2017
 
@@ -149,23 +149,23 @@ Internet-Draft              IPv6 is Classless                  July 2017
 
       Address allocation models for specific counts of fixed length
       subnets to downstream networks or devices from /48 down to /64 are
-      based on our imagination of how subnets are or should be allocated
-      within ipv4 networks.
+      based on design assumptions of how subnets are or should be
+      allocated and populated within ipv4 networks.
       Hierarchical allocation of fixed-length subnets requires
-      coordination between lower / intermediate / upper network elements
-      and has implict assumption that policies and size allocation at
-      the top of the hierarchy will accomidate all use cases with fixed
-      lenth subnet allocation.
-      Coordination with upstream network elements for the allocation of
-      fixed length subnets reveals topology and intent that may be
-      private in scope and which amounts to permission to build a
-      particular topology.
+      coordination between lower / intermediate / upper network
+      elementss.  It has implict assumption that policies and size
+      allocation allowed the top of the hierarchy will accomodate
+      present and future use cases with fixed lenth subnet allocation.
+      Coordination with upstream networks across administrative domains
+      for the allocation of fixed length subnets reveals topology and
+      intent that may be private in scope.  Policies for hierarchical
+      allcation are applied top-down and amount to permission to build a
+      particular topology (for example mobile device tethering, virtual
+      machine instantiation, containers and so on).
 
 
 
-
-
-Bourbaki                Expires January 18, 2018                [Page 3]
+Bourbaki                Expires January 19, 2018                [Page 3]
 
 Internet-Draft              IPv6 is Classless                  July 2017
 
@@ -221,7 +221,7 @@ Internet-Draft              IPv6 is Classless                  July 2017
 
 
 
-Bourbaki                Expires January 18, 2018                [Page 4]
+Bourbaki                Expires January 19, 2018                [Page 4]
 
 Internet-Draft              IPv6 is Classless                  July 2017
 
@@ -277,7 +277,7 @@ Internet-Draft              IPv6 is Classless                  July 2017
 
 
 
-Bourbaki                Expires January 18, 2018                [Page 5]
+Bourbaki                Expires January 19, 2018                [Page 5]
 
 Internet-Draft              IPv6 is Classless                  July 2017
 
@@ -333,7 +333,7 @@ Internet-Draft              IPv6 is Classless                  July 2017
 
 
 
-Bourbaki                Expires January 18, 2018                [Page 6]
+Bourbaki                Expires January 19, 2018                [Page 6]
 
 Internet-Draft              IPv6 is Classless                  July 2017
 
@@ -389,4 +389,4 @@ Author's Address
 
 
 
-Bourbaki                Expires January 18, 2018                [Page 7]
+Bourbaki                Expires January 19, 2018                [Page 7]
