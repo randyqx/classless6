@@ -73,7 +73,7 @@ Table of Contents
    8.  Authors . . . . . . . . . . . . . . . . . . . . . . . . . . .   5
    9.  References  . . . . . . . . . . . . . . . . . . . . . . . . .   5
      9.1.  Normative References  . . . . . . . . . . . . . . . . . .   5
-     9.2.  Informative References  . . . . . . . . . . . . . . . . .   5
+     9.2.  Informative References  . . . . . . . . . . . . . . . . .   6
    Author's Address  . . . . . . . . . . . . . . . . . . . . . . . .   7
 
 1.  Introduction
@@ -88,7 +88,7 @@ Table of Contents
 
    Recent proposed changes to the IP Version 6 Addressing Architecture
    specification [RFC4291] have caused controversy.  While link prefixes
-   of varied lengths, e.g.  /127, /126, /124, /120, ...  /64 have been
+   of varied lengths, e.g. /127, /126, /124, /120, ...  /64 have been
    successfully deployed for many years, glaring mismatches between a
    formal specification and long-standing field deployment practices are
    never wise, not least because of the strong risk of mis-
@@ -139,7 +139,7 @@ Internet-Draft              IPv6 is Classless                  July 2017
       interface identifier of length other than the value defined in the
       current documents.  Thus, an implementation should not assume a
       particular constant.  Rather, it should expect any lengths of
-      interface identifiers.
+      interface identifiers
 
    As IPv6 usage has evolved and grown over in recent years, it has
    become evident that it faces several scaling and coordination
@@ -151,17 +151,17 @@ Internet-Draft              IPv6 is Classless                  July 2017
       subnets to downstream networks or devices from /48 down to /64 are
       based on design assumptions of how subnets are or should be
       allocated and populated within ipv4 networks.
+
       Hierarchical allocation of fixed-length subnets requires
       coordination between lower / intermediate / upper network
       elementss.  It has implict assumption that policies and size
       allocation allowed the top of the hierarchy will accomodate
       present and future use cases with fixed lenth subnet allocation.
+
       Coordination with upstream networks across administrative domains
       for the allocation of fixed length subnets reveals topology and
       intent that may be private in scope.  Policies for hierarchical
       allcation are applied top-down and amount to permission to build a
-      particular topology (for example mobile device tethering, virtual
-      machine instantiation, containers and so on).
 
 
 
@@ -169,6 +169,9 @@ Bourbaki                Expires January 19, 2018                [Page 3]
 
 Internet-Draft              IPv6 is Classless                  July 2017
 
+
+      particular topology (for example mobile device tethering, virtual
+      machine instantiation, containers and so on).
 
 4.  Identifier and Subnet Length Statements
 
@@ -214,10 +217,7 @@ Internet-Draft              IPv6 is Classless                  July 2017
    [RFC7707] [RFC7721].  For some specific subnets, such as point to
    point links, this may be less of an issue.
 
-   On the other hand, we assume that a number of IPv6 implementations
-   fail to enforce limits on the size of some of the data structures
-   they employ for communicating with neighboring nodes, such as the
-   Neighbor Cache.  In such cases, the use of smaller subnets forces an
+
 
 
 
@@ -226,6 +226,10 @@ Bourbaki                Expires January 19, 2018                [Page 4]
 Internet-Draft              IPv6 is Classless                  July 2017
 
 
+   On the other hand, we assume that a number of IPv6 implementations
+   fail to enforce limits on the size of some of the data structures
+   they employ for communicating with neighboring nodes, such as the
+   Neighbor Cache.  In such cases, the use of smaller subnets forces an
    operational limit on such data structures, thus helping mitigate some
    pathological behaviors (such as Neighbor Cache Exhaustion attacks).
 
@@ -238,12 +242,19 @@ Internet-Draft              IPv6 is Classless                  July 2017
    The authors of this document are as follows:
 
       Randy Bush, Internet Initiative Japan
+
       Brian Carpenter, University of Auckland
+
       Fernando Gont, SI6 Networks / UTN-FRH
+
       Nick Hilliard, INEX
+
       Joel Jaeggli, Fastly
+
       Geoff Huston, APNIC
+
       Chris Morrow, Google, Inc.
+
       Job Snijders, NTT Communications
 
 9.  References
@@ -264,23 +275,19 @@ Internet-Draft              IPv6 is Classless                  July 2017
               DOI 10.17487/RFC7217, April 2014,
               <http://www.rfc-editor.org/info/rfc7217>.
 
-   [RFC8064]  Gont, F., Cooper, A., Thaler, D., and W. Liu,
-              "Recommendation on Stable IPv6 Interface Identifiers",
-              RFC 8064, DOI 10.17487/RFC8064, February 2017,
-              <http://www.rfc-editor.org/info/rfc8064>.
-
-9.2.  Informative References
-
-
-
-
-
 
 
 Bourbaki                Expires January 19, 2018                [Page 5]
 
 Internet-Draft              IPv6 is Classless                  July 2017
 
+
+   [RFC8064]  Gont, F., Cooper, A., Thaler, D., and W. Liu,
+              "Recommendation on Stable IPv6 Interface Identifiers",
+              RFC 8064, DOI 10.17487/RFC8064, February 2017,
+              <http://www.rfc-editor.org/info/rfc8064>.
+
+9.2.  Informative References
 
    [I-D.hinden-6man-rfc2464bis]
               Crawford, M. and R. Hinden, "Transmission of IPv6 Packets
@@ -324,19 +331,17 @@ Internet-Draft              IPv6 is Classless                  July 2017
               Interface Identifiers", RFC 7136, DOI 10.17487/RFC7136,
               February 2014, <http://www.rfc-editor.org/info/rfc7136>.
 
-   [RFC7608]  Boucadair, M., Petrescu, A., and F. Baker, "IPv6 Prefix
-              Length Recommendation for Forwarding", BCP 198, RFC 7608,
-              DOI 10.17487/RFC7608, July 2015,
-              <http://www.rfc-editor.org/info/rfc7608>.
-
-
-
 
 
 Bourbaki                Expires January 19, 2018                [Page 6]
 
 Internet-Draft              IPv6 is Classless                  July 2017
 
+
+   [RFC7608]  Boucadair, M., Petrescu, A., and F. Baker, "IPv6 Prefix
+              Length Recommendation for Forwarding", BCP 198, RFC 7608,
+              DOI 10.17487/RFC7608, July 2015,
+              <http://www.rfc-editor.org/info/rfc7608>.
 
    [RFC7707]  Gont, F. and T. Chown, "Network Reconnaissance in IPv6
               Networks", RFC 7707, DOI 10.17487/RFC7707, March 2016,
@@ -356,11 +361,6 @@ Author's Address
    FR
 
    Email: bourbaki@bogus.com
-
-
-
-
-
 
 
 

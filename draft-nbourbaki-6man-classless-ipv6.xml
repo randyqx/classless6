@@ -4,7 +4,7 @@
 <?rfc compact="yes"?>
 <?rfc inline="yes"?>
 <?rfc sortrefs="yes"?>
-<?rfc subcompact="yes"?>
+<?rfc subcompact="no"?>
 <?rfc symrefs="yes"?>
 <?rfc toc="yes"?>
 <?rfc tocdepth="3"?>
@@ -13,38 +13,38 @@
 
 <rfc category="std" docName="draft-bourbaki-6man-classless-ipv6-01" ipr="trust200902" updates="4291">
 
-    <front>
+<front>
 
-        <title>IPv6 is Classless</title>
+  <title>IPv6 is Classless</title>
 
-        <author fullname="Nicolas Bourbaki" initials="N." surname="Bourbaki">
-            <organization>The Intertubes</organization>
-            <address>
-                <postal>
-                    <street>42 Rue du Jour</street>
-                    <city>Sophia-Antipolis</city>
-                    <region></region>
-                    <code>::1</code>
-                    <country>FR</country>
-                </postal>
-                <email>bourbaki@bogus.com</email>
-            </address>
-        </author>
+  <author fullname="Nicolas Bourbaki" initials="N." surname="Bourbaki">
+    <organization>The Intertubes</organization>
+    <address>
+      <postal>
+        <street>42 Rue du Jour</street>
+        <city>Sophia-Antipolis</city>
+        <region></region>
+        <code>::1</code>
+        <country>FR</country>
+        </postal>
+       <email>bourbaki@bogus.com</email>
+     </address>
+   </author>
 
-        <date />
+  <date />
 
-        <area>Internet</area>
-        <workgroup>6man</workgroup>
+  <area>Internet</area>
+  <workgroup>6man</workgroup>
 
-        <abstract>
+  <abstract>
 
-            <t>
-                Over the history of IPv6, various classful address models have been proposed, none of which has withstood the test of time.
-                The last remnant of IPv6 classful addressing is a rigid network interface identifier boundary at /64.
-                This document removes the fixed position of that boundary for interface addressing.
-            </t>
+    <t>Over the history of IPv6, various classful address models have
+    been proposed, none of which has withstood the test of time.  The
+    last remnant of IPv6 classful addressing is a rigid network
+    interface identifier boundary at /64.  This document removes the
+    fixed position of that boundary for interface addressing.</t>
 
-        </abstract>
+  </abstract>
 
 <!--
   <note title="Requirements Language">
@@ -59,43 +59,56 @@
     </note>
 -->
 
-    </front>
+  </front>
 
-    <middle>
+<middle>
 
-        <section anchor="intro" title="Introduction">
+  <section anchor="intro" title="Introduction">
 
-            <t>
-                Over the history of the IPv6 protocol, several classful addressing models have been proposed.
-                The most notable example recommended Top-Level Aggregation (TLA) and Next-Level Aggregation (NLA) Identifiers <xref target="RFC2450"/>, but was obsoleted by <xref target="RFC3587"/>, leaving a single remnant of classful addressing in IPv6: a rigid network interface identifier boundary at /64.
-                This document removes the fixed position of that boundary for interface addressing.
-            </t>
+    <t>Over the history of the IPv6 protocol, several classful
+    addressing models have been proposed.  The most notable example
+    recommended Top-Level Aggregation (TLA) and Next-Level Aggregation
+    (NLA) Identifiers <xref target="RFC2450"/>, but was obsoleted by
+    <xref target="RFC3587"/>, leaving a single remnant of classful
+    addressing in IPv6: a rigid network interface identifier boundary at
+    /64.  This document removes the fixed position of that boundary for
+    interface addressing.</t>
 
-            <t>
-                Recent proposed changes to the IP Version 6 Addressing Architecture specification <xref target="RFC4291"/> have caused controversy.
-                While link prefixes of varied lengths, e.g. /127, /126, /124, /120, ...  /64 have been successfully deployed for many years, glaring mismatches between a formal specification and long-standing field deployment practices are never wise, not least because of the strong risk of mis-implementation, which can easily result in serious operational problems.
-            </t>
+    <t>Recent proposed changes to the IP Version 6 Addressing
+    Architecture specification <xref target="RFC4291"/> have caused
+    controversy.  While link prefixes of varied lengths, e.g. /127,
+    /126, /124, /120, ...  /64 have been successfully deployed for many
+    years, glaring mismatches between a formal specification and
+    long-standing field deployment practices are never wise, not least
+    because of the strong risk of mis-implementation, which can easily
+    result in serious operational problems.</t>
 
-            <t>
-                This document also clarifies that IPv6 routing subnets may be of any length up to 128.
-            </t>
+    <t>This document also clarifies that IPv6 routing subnets may be of
+    any length up to 128.</t>
 
-        </section>
+    </section>
 
-        <section anchor="reading" title="Suggested Reading">
+  <section anchor="reading" title="Suggested Reading">
 
-            <t>
-                It is assumed that the reader understands the history of classful addressing in IPv4 and why it was abolished <xref target="RFC4632"/>.
-                Of course, the acute need to conserve address space that forced the adoption of classless addressing for IPv4 does not apply to IPv6, but the arguments for operational flexibility in address assignment remain compelling.
-            </t>
+    <t>It is assumed that the reader understands the history of classful
+    addressing in IPv4 and why it was abolished <xref
+    target="RFC4632"/>.  Of course, the acute need to conserve address
+    space that forced the adoption of classless addressing for IPv4 does
+    not apply to IPv6, but the arguments for operational flexibility in
+    address assignment remain compelling.</t>
 
-            <t>
-                It is also assumed that the reader understands IPv6 <xref target="RFC2460"/>, the IP Version 6 Addressing Architecture <xref target="RFC4291"/>, the proposed changes to RFC4291 <xref target="I-D.ietf-6man-rfc4291bis"/> and RFC2464 <xref target="I-D.hinden-6man-rfc2464bis"/>, <xref target="RFC7608"/> an IPv6 Prefix Length Recommendation for Forwarding, and the IETF recommendation for the generation of stable Interface Identifiers <xref target="RFC8064"/>.
-            </t>
+    <t>It is also assumed that the reader understands IPv6 <xref
+    target="RFC2460"/>, the IP Version 6 Addressing Architecture <xref
+    target="RFC4291"/>, the proposed changes to RFC4291 <xref
+    target="I-D.ietf-6man-rfc4291bis"/> and RFC2464 <xref
+    target="I-D.hinden-6man-rfc2464bis"/>, <xref target="RFC7608"/> an
+    IPv6 Prefix Length Recommendation for Forwarding, and the IETF
+    recommendation for the generation of stable Interface Identifiers
+    <xref target="RFC8064"/>.</t>
 
-            <t>
-                <xref target="I-D.jinmei-6man-prefix-clarify"/> is also worth reading to clarify uses of varying prefix lengths on a single link.
-            </t>
+    <t><xref target="I-D.jinmei-6man-prefix-clarify"/> is also worth
+    reading to clarify uses of varying prefix lengths on a single
+    link.</t>
 
 <!--
     <t>NOTE: do we mean 4291bis (currently moribund) or 2464bis?</t>
@@ -110,58 +123,78 @@ backward compatibility. (*)
 rate is low enough.
 -->
 
-        </section>
+    </section>
 
-        <section anchor="Problem" title="Problem reinforced by classful addressing">
+  <section anchor="Problem" title="Problem reinforced by classful addressing">
 
-            <t>
-                For host computers on local area networks, generation of interface identifiers is no longer necessarily bound to layer 2 addresses (MACs) <xref target="RFC7217"/> <xref target="RFC8064"/>.
-                Therefore their length, previously fixed at 64 bits <xref target="RFC7136"/>, is in fact a variably-sized parameter as explicitly acknowledged in Section 5.5.3(d) of <xref target="RFC4862"/> which states:
+   <t>For host computers on local area networks, generation of interface
+   identifiers is no longer necessarily bound to layer 2 addresses
+   (MACs) <xref target="RFC7217"/> <xref target="RFC8064"/>.  Therefore
+   their length, previously fixed at 64 bits <xref target="RFC7136"/>,
+   is in fact a variably-sized parameter as explicitly acknowledged in
+   Section 5.5.3(d) of <xref target="RFC4862"/> which states:
 
-                <list>
-                    <t>
-                        Note that a future revision of the address architecture [RFC4291] and a future link-type-specific document, which will still be consistent with each other, could potentially allow for an interface identifier of length other than the value defined in the current documents.
-                        Thus, an implementation should not assume a particular constant.
-                        Rather, it should expect any lengths of interface identifiers.
-                    </t>
-                </list>
-            </t>
+   <list>
 
-            <t>
-                As IPv6 usage has evolved and grown over in recent years, it has become evident that it faces several scaling and coordination problems.
-                These problems are analogous to allocation and coordination problems that motivated IPv4 CIDR allocation and later abundant IPv4 PAT, they include:
+     <t>Note that a future revision of the address architecture <xref
+     target="RFC4291"/> and a future link-type-specific document, which
+     will still be consistent with each other, could potentially allow
+     for an interface identifier of length other than the value defined
+     in the current documents.  Thus, an implementation should not
+     assume a particular constant.  Rather, it should expect any lengths
+     of interface identifiers</t>
 
-                <list>
+     </list>
+   </t>
 
-                    <t>
-                        Address allocation models for specific counts of fixed length subnets to downstream networks or devices from /48 down to /64 are based on design assumptions of how subnets are or should be allocated and populated within ipv4 networks.
-                    </t>
-                    <t>
-                        Hierarchical allocation of fixed-length subnets requires coordination between lower / intermediate / upper network elementss.
-                        It has implict assumption that policies and size allocation allowed the top of the hierarchy will accomodate present and future use cases with fixed lenth subnet allocation.
-                    </t>
-                    <t>
-                        Coordination with upstream networks across administrative domains for the allocation of fixed length subnets reveals topology and intent that may be private in scope.
-                        Policies for hierarchical allcation are applied top-down and amount to permission to build a particular topology (for example mobile device tethering, virtual machine instantiation, containers and so on).
-                    </t>
+   <t>As IPv6 usage has evolved and grown over in recent years, it has
+   become evident that it faces several scaling and coordination
+   problems.  These problems are analogous to allocation and
+   coordination problems that motivated IPv4 CIDR allocation and later
+   abundant IPv4 PAT, they include:
 
-                </list>
+   <list>
 
-            </t>
+     <t>Address allocation models for specific counts of fixed length
+     subnets to downstream networks or devices from /48 down to /64
+     are based on design assumptions of how subnets are or should be
+     allocated and populated within ipv4 networks.</t>
 
-        </section>
+     <t>Hierarchical allocation of fixed-length subnets requires
+     coordination between lower / intermediate / upper network
+     elementss.  It has implict assumption that policies and size
+     allocation allowed the top of the hierarchy will accomodate
+     present and future use cases with fixed lenth subnet
+     allocation.</t>
 
-        <section anchor="statement" title="Identifier and Subnet Length Statements">
+     <t>Coordination with upstream networks across administrative
+     domains for the allocation of fixed length subnets reveals
+     topology and intent that may be private in scope.  Policies for
+     hierarchical allcation are applied top-down and amount to
+     permission to build a particular topology (for example mobile
+     device tethering, virtual machine instantiation, containers and
+     so on).</t>
 
-            <t>
-                IPv6 unicast interfaces may use any subnet length up to 128 except for situations where an Internet Standard document may impose a particular length, for example Stateless Address Autoconfiguration (SLAAC) <xref target="RFC4862"/>, or Using 127-Bit IPv6 Prefixes on Inter-Router Links <xref target="RFC6164"/>.
-            </t>
+     </list>
+     </t>
 
-            <t>
-                Additionally, this document clarifies that a node or router MUST support routing of any valid network prefix length, even if SLAAC or other standards are in use, because routing could choose to differentiate at a different granularity than is used by any such automated link local address configuration tools.
-            </t>
+    </section>
 
-        </section>
+  <section anchor="statement" title="Identifier and Subnet Length Statements">
+
+    <t>IPv6 unicast interfaces may use any subnet length up to 128
+    except for situations where an Internet Standard document may impose
+    a particular length, for example Stateless Address Autoconfiguration
+    (SLAAC) <xref target="RFC4862"/>, or Using 127-Bit IPv6 Prefixes on
+    Inter-Router Links <xref target="RFC6164"/>.</t>
+
+    <t>Additionally, this document clarifies that a node or router MUST
+    support routing of any valid network prefix length, even if SLAAC or
+    other standards are in use, because routing could choose to
+    differentiate at a different granularity than is used by any such
+    automated link local address configuration tools.</t>
+
+    </section>
 
 <!-- [fgont] I think these section is mixing up to things:
 
@@ -179,92 +212,102 @@ rate is low enough.
                are employed for point to point links.
 -->
 
-        <section anchor="notes" title="Recommendations">
+  <section anchor="notes" title="Recommendations">
 
-            <t>
-                For historical reasons, when a prefix is needed on a link, barring other considerations, a /64 is recommended <xref target="RFC7136"/>.
-            </t>
+    <t>For historical reasons, when a prefix is needed on a link,
+    barring other considerations, a /64 is recommended <xref
+    target="RFC7136"/>.</t>
 
-            <t>
-                The length of the Interface Identifier in Stateless Address Autoconfiguration <xref target="RFC4862"/> is a parameter; its length SHOULD be sufficient for effective randomization for privacy reasons.
-                For example, a /48 might be sufficient.
-                But operationally we recommend, barring strong considerations to the contrary, using 64-bits for SLAAC in order not to discover bugs where 64 was hard-coded, and to favor portability of devices and operating systems.
-            </t>
+    <t>The length of the Interface Identifier in Stateless Address
+    Autoconfiguration <xref target="RFC4862"/> is a parameter; its
+    length SHOULD be sufficient for effective randomization for privacy
+    reasons.  For example, a /48 might be sufficient.  But operationally
+    we recommend, barring strong considerations to the contrary, using
+    64-bits for SLAAC in order not to discover bugs where 64 was
+    hard-coded, and to favor portability of devices and operating
+    systems.</t>
 
-            <t>
-                Nonetheless, there is no reason in theory why an IPv6 node should not operate with different interface identfier lengths on different physical interfaces.
-                Thus, a correct implementation of SLAAC must in fact allow for any prefix length, with the value being a parameter per interface.
-                For instance, the Interface Identifier length in the recommended (see <xref target="RFC8064"/>) algorithm for selecting stable interface identifiers <xref target="RFC7217"/> is a parameter, rather than a hardcoded value.
-            </t>
+    <t>Nonetheless, there is no reason in theory why an IPv6 node should
+    not operate with different interface identfier lengths on different
+    physical interfaces.  Thus, a correct implementation of SLAAC must
+    in fact allow for any prefix length, with the value being a
+    parameter per interface.  For instance, the Interface Identifier
+    length in the recommended (see <xref target="RFC8064"/>) algorithm
+    for selecting stable interface identifiers <xref target="RFC7217"/>
+    is a parameter, rather than a hardcoded value.</t>
 
-        </section>
+    </section>
 
-        <section anchor="security" title="Security Considerations">
+  <section anchor="security" title="Security Considerations">
 
-            <t>
+    <t>Assuming that nodes employ unpredictable interface identifiers
+    <xref target="RFC7721"/>, the subnet size may have an impact on some
+    security and privacy properties of a network.  Namely, the smaller
+    the subnet size, the more feasible it becomes to perform IPv6
+    address scans <xref target="RFC7707"/> <xref target="RFC7721"/>.
+    For some specific subnets, such as point to point links, this may be
+    less of an issue.</t>
 
-                Assuming that nodes employ unpredictable interface identifiers <xref target="RFC7721"/>, the subnet size may have an impact on some security and privacy properties of a network.
-                Namely, the smaller the subnet size, the more feasible it becomes to perform IPv6 address scans <xref target="RFC7707"/> <xref target="RFC7721"/>.
-                For some specific subnets, such as point to point links, this may be less of an issue.
-            </t>
+    <t>On the other hand, we assume that a number of IPv6
+    implementations fail to enforce limits on the size of some of the
+    data structures they employ for communicating with neighboring
+    nodes, such as the Neighbor Cache.  In such cases, the use of
+    smaller subnets forces an operational limit on such data structures,
+    thus helping mitigate some pathological behaviors (such as Neighbor
+    Cache Exhaustion attacks).</t>
 
-            <t>
-                On the other hand, we assume that a number of IPv6 implementations fail to enforce limits on the size of some of the data structures they employ for communicating with neighboring nodes, such as the Neighbor Cache.
-                In such cases, the use of smaller subnets forces an operational limit on such data structures, thus helping mitigate some pathological behaviors (such as Neighbor Cache Exhaustion attacks).
-            </t>
-            <!-- [fgont] Still need to add references here... e.g. to Joel's RFC -->
-        </section>
+ <!-- [fgont] Still need to add references here... e.g. to Joel's RFC -->
 
-        <section anchor="iana" title="IANA Considerations">
-            <t>
-                This document has no IANA Considerations.
-            </t>
-        </section>
+    </section>
 
-        <section anchor="authors" title="Authors">
-            <t>
-                The authors of this document are as follows:
+  <section anchor="iana" title="IANA Considerations">
 
-                <list>
-                    <t> Randy Bush, Internet Initiative Japan</t>
-                    <t> Brian Carpenter, University of Auckland</t>
-                    <t> Fernando Gont, SI6 Networks / UTN-FRH</t>
-                    <t> Nick Hilliard, INEX</t>
-                    <t> Joel Jaeggli, Fastly</t>
-                    <t> Geoff Huston, APNIC</t>
-                    <t> Chris Morrow, Google, Inc.</t>
-                    <t> Job Snijders, NTT Communications</t>
-                </list>
-            </t>
+    <t>This document has no IANA Considerations.</t>
 
-        </section>
-    </middle>
+    </section>
 
-    <back>
+  <section anchor="authors" title="Authors">
+    <t>The authors of this document are as follows:
+    <list>
+      <t> Randy Bush, Internet Initiative Japan</t>
+      <t> Brian Carpenter, University of Auckland</t>
+      <t> Fernando Gont, SI6 Networks / UTN-FRH</t>
+      <t> Nick Hilliard, INEX</t>
+      <t> Joel Jaeggli, Fastly</t>
+      <t> Geoff Huston, APNIC</t>
+      <t> Chris Morrow, Google, Inc.</t>
+      <t> Job Snijders, NTT Communications</t>
+      </list>
+    </t>
 
-        <references title="Normative References">
-            <!-- <?rfc include="reference.RFC.2119"?> -->
-            <?rfc include="reference.RFC.2460"?>
-            <?rfc include="reference.RFC.4291"?>
-            <?rfc include="reference.RFC.7217"?>
-            <?rfc include="reference.RFC.8064"?>
-        </references>
+  </section>
 
-        <references title="Informative References">
-            <?rfc include="reference.RFC.2450"?>
-            <?rfc include="reference.RFC.4862"?>
-            <?rfc include="reference.RFC.6164"?>
-            <?rfc include="reference.RFC.3587"?>
-            <?rfc include="reference.RFC.4632"?>
-            <?rfc include="reference.RFC.7608"?>
-            <?rfc include="reference.RFC.7707"?>
-            <?rfc include="reference.RFC.7136"?>
-            <?rfc include="reference.RFC.7721"?>
-            <?rfc include="reference.I-D.ietf-6man-rfc4291bis"?>
-            <?rfc include="reference.I-D.hinden-6man-rfc2464bis"?>
-            <?rfc include="reference.I-D.jinmei-6man-prefix-clarify"?>
-        </references>
+</middle>
 
-    </back>
+<back>
+
+  <references title="Normative References">
+    <!-- <?rfc include="reference.RFC.2119"?> -->
+    <?rfc include="reference.RFC.2460"?>
+    <?rfc include="reference.RFC.4291"?>
+    <?rfc include="reference.RFC.7217"?>
+    <?rfc include="reference.RFC.8064"?>
+    </references>
+
+  <references title="Informative References">
+    <?rfc include="reference.RFC.2450"?>
+    <?rfc include="reference.RFC.4862"?>
+    <?rfc include="reference.RFC.6164"?>
+    <?rfc include="reference.RFC.3587"?>
+    <?rfc include="reference.RFC.4632"?>
+    <?rfc include="reference.RFC.7608"?>
+    <?rfc include="reference.RFC.7707"?>
+    <?rfc include="reference.RFC.7136"?>
+    <?rfc include="reference.RFC.7721"?>
+    <?rfc include="reference.I-D.ietf-6man-rfc4291bis"?>
+    <?rfc include="reference.I-D.hinden-6man-rfc2464bis"?>
+    <?rfc include="reference.I-D.jinmei-6man-prefix-clarify"?>
+    </references>
+  </back>
 
 </rfc>
