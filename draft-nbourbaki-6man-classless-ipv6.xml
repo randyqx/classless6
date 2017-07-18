@@ -148,19 +148,27 @@ rate is low enough.
   problems that motivated IPv4 CIDR allocation and later abundant IPv4
   PAT, they include:
   <list>
-      <t>Address allocation models for specific counts of fixed length
-      subnets to downstream networks or devices from /48 down to /64 are
-      based on our imagination of how subnets are or should be allocated
-      within ipv4 networks.</t>
-      <t>Hierarchical allocation of fixed-length subnets requires
-      coordination between lower / intermediate / upper network elements
-      and has implict assumption that policies and size allocation at the
-      top of the hierarchy will accomidate all use cases with fixed lenth
-      subnet allocation.</t>
-      <t>Coordination with upstream network elements for the allocation of
-      fixed length subnets reveals topology and intent that may be private
-      in scope and which amounts to permission to build a particular
-      topology.</t>
+      <t>
+          Address allocation models for specific counts of fixed length subnets
+          to downstream networks or devices from /48 down to /64 are based on
+          design assumptions of how subnets are or should be allocated and
+          populated within ipv4 networks.
+      </t>
+      <t>
+          Hierarchical allocation of fixed-length subnets requires coordination
+          between lower / intermediate / upper network elementss. It has
+          implict assumption that policies and size allocation allowed the top
+          of the hierarchy will accomodate present and future use cases with
+          fixed lenth subnet allocation.
+      </t>
+      <t>
+          Coordination with upstream networks across administrative domains for
+          the allocation of fixed length subnets reveals topology and intent that
+          may be private in scope. Policies for hierarchical allcation are applied
+          top-down and amount to permission to build a particular topology (for
+          example mobile device tethering, virtual machine instantiation, containers
+          and so on).
+      </t>
       </list>
     </t>
   </section>
