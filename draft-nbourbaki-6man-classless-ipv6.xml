@@ -162,15 +162,15 @@ rate is low enough.
 
      <t>Hierarchical allocation of fixed-length subnets requires
      coordination between lower / intermediate / upper network
-     elementss.  It has implict assumption that policies and size
-     allocation allowed the top of the hierarchy will accomodate
-     present and future use cases with fixed lenth subnet
+     elements.  It has implicit assumption that policies and size
+     allocation allowed the top of the hierarchy will accommodate
+     present and future use cases with fixed length subnet
      allocation.</t>
 
      <t>Coordination with upstream networks across administrative
      domains for the allocation of fixed length subnets reveals
      topology and intent that may be private in scope.  Policies for
-     hierarchical allcation are applied top-down and amount to
+     hierarchical allocation are applied top-down and amount to
      permission to build a particular topology (for example mobile
      device tethering, virtual machine instantiation, containers and
      so on).</t>
@@ -228,13 +228,13 @@ rate is low enough.
     systems.</t>
 
     <t>Nonetheless, there is no reason in theory why an IPv6 node should
-    not operate with different interface identfier lengths on different
+    not operate with different interface identifier lengths on different
     physical interfaces.  Thus, a correct implementation of SLAAC must
     in fact allow for any prefix length, with the value being a
     parameter per interface.  For instance, the Interface Identifier
     length in the recommended (see <xref target="RFC8064"/>) algorithm
     for selecting stable interface identifiers <xref target="RFC7217"/>
-    is a parameter, rather than a hardcoded value.</t>
+    is a parameter, rather than a hard-coded value.</t>
 
     </section>
 
