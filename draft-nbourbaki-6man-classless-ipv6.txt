@@ -4,9 +4,9 @@
 
 6man                                                         N. Bourbaki
 Internet-Draft                                            The Intertubes
-Updates: 4291 (if approved)                                July 19, 2017
+Updates: 4291 (if approved)                                July 25, 2017
 Intended status: Standards Track
-Expires: January 20, 2018
+Expires: January 26, 2018
 
 
                            IPv6 is Classless
@@ -35,7 +35,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on January 20, 2018.
+   This Internet-Draft will expire on January 26, 2018.
 
 Copyright Notice
 
@@ -53,7 +53,7 @@ Copyright Notice
 
 
 
-Bourbaki                Expires January 20, 2018                [Page 1]
+Bourbaki                Expires January 26, 2018                [Page 1]
 
 Internet-Draft              IPv6 is Classless                  July 2017
 
@@ -65,10 +65,10 @@ Table of Contents
 
    1.  Introduction  . . . . . . . . . . . . . . . . . . . . . . . .   2
    2.  Suggested Reading . . . . . . . . . . . . . . . . . . . . . .   2
-   3.  Problem reinforced by classful addressing . . . . . . . . . .   3
+   3.  Problems Reinforced by Classful Addressing  . . . . . . . . .   3
    4.  Identifier and Subnet Length Statements . . . . . . . . . . .   4
    5.  Recommendations . . . . . . . . . . . . . . . . . . . . . . .   4
-   6.  Security Considerations . . . . . . . . . . . . . . . . . . .   4
+   6.  Security Considerations . . . . . . . . . . . . . . . . . . .   5
    7.  IANA Considerations . . . . . . . . . . . . . . . . . . . . .   5
    8.  Authors . . . . . . . . . . . . . . . . . . . . . . . . . . .   5
    9.  References  . . . . . . . . . . . . . . . . . . . . . . . . .   5
@@ -109,7 +109,7 @@ Table of Contents
 
 
 
-Bourbaki                Expires January 20, 2018                [Page 2]
+Bourbaki                Expires January 26, 2018                [Page 2]
 
 Internet-Draft              IPv6 is Classless                  July 2017
 
@@ -124,7 +124,7 @@ Internet-Draft              IPv6 is Classless                  July 2017
    [I-D.jinmei-6man-prefix-clarify] is also worth reading to clarify
    uses of varying prefix lengths on a single link.
 
-3.  Problem reinforced by classful addressing
+3.  Problems Reinforced by Classful Addressing
 
    For host computers on local area networks, generation of interface
    identifiers is no longer necessarily bound to layer 2 addresses
@@ -141,11 +141,10 @@ Internet-Draft              IPv6 is Classless                  July 2017
       particular constant.  Rather, it should expect any lengths of
       interface identifiers
 
-   As IPv6 usage has evolved and grown over in recent years, it has
-   become evident that it faces several scaling and coordination
-   problems.  These problems are analogous to allocation and
-   coordination problems that motivated IPv4 CIDR allocation and later
-   abundant IPv4 PAT, they include:
+   As IPv6 use has evolved and grown, it has become evident that it
+   faces several scaling and coordination problems.  These problems are
+   analogous to allocation and coordination problems that motivated IPv4
+   CIDR allocation and later abundant IPv4 PAT, they include:
 
       Address allocation models for specific counts of fixed length
       subnets to downstream networks or devices from /48 down to /64 are
@@ -155,23 +154,31 @@ Internet-Draft              IPv6 is Classless                  July 2017
       Hierarchical allocation of fixed-length subnets requires
       coordination between lower / intermediate / upper network
       elements.  It has implicit assumption that policies and size
-      allocation allowed the top of the hierarchy will accommodate
+      allocation allowed at the top of the hierarchy will accommodate
       present and future use cases with fixed length subnet allocation.
 
       Coordination with upstream networks across administrative domains
       for the allocation of fixed length subnets reveals topology and
-      intent that may be private in scope.  Policies for hierarchical
-      allocation are applied top-down and amount to permission to build
+      intent that may be private in scope, allowing the upstream
+      networks to restrict the topology that may be built.  Policies for
+      hierarchical allocation are applied top-down and amount to
 
 
 
-Bourbaki                Expires January 20, 2018                [Page 3]
+Bourbaki                Expires January 26, 2018                [Page 3]
 
 Internet-Draft              IPv6 is Classless                  July 2017
 
 
-      a particular topology (for example mobile device tethering,
-      virtual machine instantiation, containers and so on).
+      permission to build a particular topology (for example mobile
+      device tethering, virtual machine instantiation, containers and so
+      on).
+
+      In the case where a device is given a /64 (e.g. mobile phone
+      running SLAAC only, not DHCP), there is no protocol allowing them
+      to provide downstream routed layer 3 subnets, because all they
+      have is a /64.  This applies more to nodes which do not have
+      DHCPv6.
 
 4.  Identifier and Subnet Length Statements
 
@@ -208,6 +215,17 @@ Internet-Draft              IPv6 is Classless                  July 2017
    recommended (see [RFC8064]) algorithm for selecting stable interface
    identifiers [RFC7217] is a parameter, rather than a hard-coded value.
 
+
+
+
+
+
+
+Bourbaki                Expires January 26, 2018                [Page 4]
+
+Internet-Draft              IPv6 is Classless                  July 2017
+
+
 6.  Security Considerations
 
    Assuming that nodes employ unpredictable interface identifiers
@@ -216,15 +234,6 @@ Internet-Draft              IPv6 is Classless                  July 2017
    size, the more feasible it becomes to perform IPv6 address scans
    [RFC7707] [RFC7721].  For some specific subnets, such as point to
    point links, this may be less of an issue.
-
-
-
-
-
-Bourbaki                Expires January 20, 2018                [Page 4]
-
-Internet-Draft              IPv6 is Classless                  July 2017
-
 
    On the other hand, we assume that a number of IPv6 implementations
    fail to enforce limits on the size of some of the data structures
@@ -241,21 +250,22 @@ Internet-Draft              IPv6 is Classless                  July 2017
 
    The authors of this document are as follows:
 
-      Randy Bush, Internet Initiative Japan
+      Randy Bush <randy@psg.com>, Internet Initiative Japan
 
-      Brian Carpenter, University of Auckland
+      Brian Carpenter <brian.e.carpenter@gmail.com>, University of
+      Auckland
 
-      Fernando Gont, SI6 Networks / UTN-FRH
+      Fernando Gont <fgont@si6networks.com>, SI6 Networks / UTN-FRH
 
-      Nick Hilliard, INEX
+      Nick Hilliard <nick@netability.ie>, INEX
 
-      Joel Jaeggli, Fastly
+      Joel Jaeggli <joelja@bogus.com>, Fastly
 
-      Geoff Huston, APNIC
+      Geoff Huston <gih@apnic.net>, APNIC
 
-      Chris Morrow, Google, Inc.
+      Chris Morrow <morrowc@ops-netman.net>, Google, Inc.
 
-      Job Snijders, NTT Communications
+      Job Snijders <morrowc@ops-netman.net>, NTT Communications
 
 9.  References
 
@@ -264,6 +274,13 @@ Internet-Draft              IPv6 is Classless                  July 2017
    [RFC2460]  Deering, S. and R. Hinden, "Internet Protocol, Version 6
               (IPv6) Specification", RFC 2460, DOI 10.17487/RFC2460,
               December 1998, <http://www.rfc-editor.org/info/rfc2460>.
+
+
+
+Bourbaki                Expires January 26, 2018                [Page 5]
+
+Internet-Draft              IPv6 is Classless                  July 2017
+
 
    [RFC4291]  Hinden, R. and S. Deering, "IP Version 6 Addressing
               Architecture", RFC 4291, DOI 10.17487/RFC4291, February
@@ -274,13 +291,6 @@ Internet-Draft              IPv6 is Classless                  July 2017
               Autoconfiguration (SLAAC)", RFC 7217,
               DOI 10.17487/RFC7217, April 2014,
               <http://www.rfc-editor.org/info/rfc7217>.
-
-
-
-Bourbaki                Expires January 20, 2018                [Page 5]
-
-Internet-Draft              IPv6 is Classless                  July 2017
-
 
    [RFC8064]  Gont, F., Cooper, A., Thaler, D., and W. Liu,
               "Recommendation on Stable IPv6 Interface Identifiers",
@@ -317,6 +327,17 @@ Internet-Draft              IPv6 is Classless                  July 2017
               Plan", BCP 122, RFC 4632, DOI 10.17487/RFC4632, August
               2006, <http://www.rfc-editor.org/info/rfc4632>.
 
+
+
+
+
+
+
+Bourbaki                Expires January 26, 2018                [Page 6]
+
+Internet-Draft              IPv6 is Classless                  July 2017
+
+
    [RFC4862]  Thomson, S., Narten, T., and T. Jinmei, "IPv6 Stateless
               Address Autoconfiguration", RFC 4862,
               DOI 10.17487/RFC4862, September 2007,
@@ -330,13 +351,6 @@ Internet-Draft              IPv6 is Classless                  July 2017
    [RFC7136]  Carpenter, B. and S. Jiang, "Significance of IPv6
               Interface Identifiers", RFC 7136, DOI 10.17487/RFC7136,
               February 2014, <http://www.rfc-editor.org/info/rfc7136>.
-
-
-
-Bourbaki                Expires January 20, 2018                [Page 6]
-
-Internet-Draft              IPv6 is Classless                  July 2017
-
 
    [RFC7608]  Boucadair, M., Petrescu, A., and F. Baker, "IPv6 Prefix
               Length Recommendation for Forwarding", BCP 198, RFC 7608,
@@ -375,18 +389,4 @@ Author's Address
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Bourbaki                Expires January 20, 2018                [Page 7]
+Bourbaki                Expires January 26, 2018                [Page 7]
