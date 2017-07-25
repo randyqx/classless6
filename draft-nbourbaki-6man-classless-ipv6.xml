@@ -125,7 +125,7 @@ rate is low enough.
 
     </section>
 
-  <section anchor="Problem" title="Problem reinforced by classful addressing">
+  <section anchor="Problem" title="Problems Reinforced by Classful Addressing">
 
    <t>For host computers on local area networks, generation of interface
    identifiers is no longer necessarily bound to layer 2 addresses
@@ -147,11 +147,10 @@ rate is low enough.
      </list>
    </t>
 
-   <t>As IPv6 usage has evolved and grown over in recent years, it has
-   become evident that it faces several scaling and coordination
-   problems.  These problems are analogous to allocation and
-   coordination problems that motivated IPv4 CIDR allocation and later
-   abundant IPv4 PAT, they include:
+   <t>As IPv6 use has evolved and grown, it has become evident that it
+   faces several scaling and coordination problems.  These problems are
+   analogous to allocation and coordination problems that motivated IPv4
+   CIDR allocation and later abundant IPv4 PAT, they include:
 
    <list>
 
@@ -163,17 +162,23 @@ rate is low enough.
      <t>Hierarchical allocation of fixed-length subnets requires
      coordination between lower / intermediate / upper network
      elements.  It has implicit assumption that policies and size
-     allocation allowed the top of the hierarchy will accommodate
+     allocation allowed at the top of the hierarchy will accommodate
      present and future use cases with fixed length subnet
      allocation.</t>
 
      <t>Coordination with upstream networks across administrative
-     domains for the allocation of fixed length subnets reveals
-     topology and intent that may be private in scope.  Policies for
+     domains for the allocation of fixed length subnets reveals topology
+     and intent that may be private in scope, allowing the upstream
+     networks to restrict the topology that may be built.  Policies for
      hierarchical allocation are applied top-down and amount to
      permission to build a particular topology (for example mobile
-     device tethering, virtual machine instantiation, containers and
-     so on).</t>
+     device tethering, virtual machine instantiation, containers and so
+     on).</t>
+
+     <t>In the case where a device is given a /64 (e.g. mobile phone
+     running SLAAC only, not DHCP), there is no protocol allowing them
+     to provide downstream routed layer 3 subnets, because all they have
+     is a /64.  This applies more to nodes which do not have DHCPv6.</t>
 
      </list>
      </t>
@@ -269,14 +274,14 @@ rate is low enough.
   <section anchor="authors" title="Authors">
     <t>The authors of this document are as follows:
     <list>
-      <t> Randy Bush, Internet Initiative Japan</t>
-      <t> Brian Carpenter, University of Auckland</t>
-      <t> Fernando Gont, SI6 Networks / UTN-FRH</t>
-      <t> Nick Hilliard, INEX</t>
-      <t> Joel Jaeggli, Fastly</t>
-      <t> Geoff Huston, APNIC</t>
-      <t> Chris Morrow, Google, Inc.</t>
-      <t> Job Snijders, NTT Communications</t>
+      <t> Randy Bush &lt;randy@psg.com&gt;, Internet Initiative Japan</t>
+      <t> Brian Carpenter &lt;brian.e.carpenter@gmail.com&gt;, University of Auckland</t>
+      <t> Fernando Gont &lt;fgont@si6networks.com&gt;, SI6 Networks / UTN-FRH</t>
+      <t> Nick Hilliard &lt;nick@netability.ie&gt;, INEX</t>
+      <t> Joel Jaeggli &lt;joelja@bogus.com&gt;, Fastly</t>
+      <t> Geoff Huston &lt;gih@apnic.net&gt;, APNIC</t>
+      <t> Chris Morrow &lt;morrowc@ops-netman.net&gt;, Google, Inc.</t>
+      <t> Job Snijders &lt;morrowc@ops-netman.net&gt;, NTT Communications</t>
       </list>
     </t>
 
