@@ -157,7 +157,7 @@ rate is low enough.
      <t>Address allocation models for specific counts of fixed length
      subnets to downstream networks or devices from /48 down to /64
      are based on design assumptions of how subnets are or should be
-     allocated and populated within ipv4 networks.</t>
+     allocated and populated within IPv4 networks.</t>
 
      <t>Hierarchical allocation of fixed-length subnets requires
      coordination between lower / intermediate / upper network
