@@ -4,9 +4,9 @@
 
 6man                                                         N. Bourbaki
 Internet-Draft                                            The Intertubes
-Updates: 4291 (if approved)                                July 30, 2017
+Updates: 4291 (if approved)                                July 31, 2017
 Intended status: Standards Track
-Expires: January 31, 2018
+Expires: February 1, 2018
 
 
                            IPv6 is Classless
@@ -35,7 +35,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on January 31, 2018.
+   This Internet-Draft will expire on February 1, 2018.
 
 Copyright Notice
 
@@ -53,7 +53,7 @@ Copyright Notice
 
 
 
-Bourbaki                Expires January 31, 2018                [Page 1]
+Bourbaki                Expires February 1, 2018                [Page 1]
 
 Internet-Draft              IPv6 is Classless                  July 2017
 
@@ -109,7 +109,7 @@ Table of Contents
 
 
 
-Bourbaki                Expires January 31, 2018                [Page 2]
+Bourbaki                Expires February 1, 2018                [Page 2]
 
 Internet-Draft              IPv6 is Classless                  July 2017
 
@@ -165,7 +165,7 @@ Internet-Draft              IPv6 is Classless                  July 2017
 
 
 
-Bourbaki                Expires January 31, 2018                [Page 3]
+Bourbaki                Expires February 1, 2018                [Page 3]
 
 Internet-Draft              IPv6 is Classless                  July 2017
 
@@ -202,10 +202,10 @@ Internet-Draft              IPv6 is Classless                  July 2017
    The length of the Interface Identifier in Stateless Address
    Autoconfiguration [RFC4862] is a parameter; its length SHOULD be
    sufficient for effective randomization for privacy reasons.  For
-   example, a /48 might be sufficient.  But operationally we recommend,
-   barring strong considerations to the contrary, using 64-bits for
-   SLAAC in order not to discover bugs where 64 was hard-coded, and to
-   favor portability of devices and operating systems.
+   example, 48 bits might be sufficient.  But operationally we
+   recommend, barring strong considerations to the contrary, using
+   64-bits for SLAAC in order not to discover bugs where 64 was hard-
+   coded, and to favor portability of devices and operating systems.
 
    Nonetheless, there is no reason in theory why an IPv6 node should not
    operate with different interface identifier lengths on different
@@ -221,7 +221,7 @@ Internet-Draft              IPv6 is Classless                  July 2017
 
 
 
-Bourbaki                Expires January 31, 2018                [Page 4]
+Bourbaki                Expires February 1, 2018                [Page 4]
 
 Internet-Draft              IPv6 is Classless                  July 2017
 
@@ -277,7 +277,7 @@ Internet-Draft              IPv6 is Classless                  July 2017
 
 
 
-Bourbaki                Expires January 31, 2018                [Page 5]
+Bourbaki                Expires February 1, 2018                [Page 5]
 
 Internet-Draft              IPv6 is Classless                  July 2017
 
@@ -333,7 +333,7 @@ Internet-Draft              IPv6 is Classless                  July 2017
 
 
 
-Bourbaki                Expires January 31, 2018                [Page 6]
+Bourbaki                Expires February 1, 2018                [Page 6]
 
 Internet-Draft              IPv6 is Classless                  July 2017
 
@@ -389,4 +389,4 @@ Author's Address
 
 
 
-Bourbaki                Expires January 31, 2018                [Page 7]
+Bourbaki                Expires February 1, 2018                [Page 7]
