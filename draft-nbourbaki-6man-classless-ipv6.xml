@@ -226,7 +226,7 @@ rate is low enough.
     <t>The length of the Interface Identifier in Stateless Address
     Autoconfiguration <xref target="RFC4862"/> is a parameter; its
     length SHOULD be sufficient for effective randomization for privacy
-    reasons.  For example, a /48 might be sufficient.  But operationally
+    reasons.  For example, 48 bits might be sufficient.  But operationally
     we recommend, barring strong considerations to the contrary, using
     64-bits for SLAAC in order not to discover bugs where 64 was
     hard-coded, and to favor portability of devices and operating
