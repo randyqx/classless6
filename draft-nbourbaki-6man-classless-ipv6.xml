@@ -11,7 +11,7 @@
 <?rfc tocindent="yes"?>
 <?rfc tocompact="yes"?>
 
-<rfc category="std" docName="draft-bourbaki-6man-classless-ipv6-02" ipr="trust200902" updates="4291">
+<rfc category="std" docName="draft-bourbaki-6man-classless-ipv6-03" ipr="trust200902" updates="4291">
 
 <front>
 
@@ -231,6 +231,9 @@ rate is low enough.
     64-bits for SLAAC in order not to discover bugs where 64 was
     hard-coded, and to favor portability of devices and operating
     systems.</t>
+
+    <t>Note that OpenBSD ships with SLAAC for lengths longer than
+    /64.</t>
 
     <t>Nonetheless, there is no reason in theory why an IPv6 node should
     not operate with different interface identifier lengths on different
